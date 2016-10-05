@@ -22,6 +22,14 @@ Each challenge will contain awesome prizes (cash and others) for the most effect
 
 **You can find a current list of challenges, with lots of information, on the [Udacity self-driving car page](http://udacity.com/self-driving-car). This is the primary way to contribute to this open source self-driving car project.**
 
+## Datasets
+
+####Driving Data
+| Date | Lighting Conditions | Duration | Compressed Size | Uncompressed | Link |
+| ---- | :------------------:| --------:| ---------------:| ------------:| ----:|
+| 9/29/2016 | Sunny | 12:40 | 25G | 40G | [Download](http://bit.ly/udacity-dataset-2-1)
+| 10/3/2016 | Overcast | 58:53 | 124G | 183G | [Download](http://bit.ly/udacity-dataset-2-2) |
+
 ## Contributions
 Here's a list of the projects we've open sourced from crowdsourced contributions:
 
