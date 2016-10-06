@@ -5,7 +5,7 @@
 
 At [Udacity](https://udacity.com), we believe in democratizing education. How can we provide opportunity to everyone on the planet? We also believe in teaching really amazing and useful subject matter. When we decided to build the [Self-Driving Car Nanodegree program](https://udacity.com/nd013), to teach the world to build autonomous vehicles, we instantly knew we had to tackle our own self-driving car too.
 
-Together with [Google](https://google) Self-Driving Car founder and [Udacity](https://udacity.com) President Sebastian Thrun, we formed our core Self-Driving Car Team. One of the first decisions we made? **Open source code, written by hundreds of students from across the globe!**
+Together with [Google](https://google.com) Self-Driving Car founder and [Udacity](https://udacity.com) President Sebastian Thrun, we formed our core Self-Driving Car Team. One of the first decisions we made? **Open source code, written by hundreds of students from across the globe!**
 
 **[You can read more about our plans for this project](https://medium.com/udacity/were-building-an-open-source-self-driving-car-ac3e973cd163#.bm5c5chek).**
 
