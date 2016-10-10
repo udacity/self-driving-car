@@ -30,6 +30,9 @@ Each challenge will contain awesome prizes (cash and others) for the most effect
 | 9/29/2016 | Sunny | 12:40 | 25G | 40G | [HTTP](http://bit.ly/udacity-dataset-2-1) | [Torrent](datasets/dataset.bag.tar.gz.torrent)| `33a10f7835068eeb29b2a3274c216e7d` |
 | 10/3/2016 | Overcast | 58:53 | 124G | 183G | [HTTP](http://bit.ly/udacity-dataset-2-2) | [Torrent](datasets/dataset-2-2.bag.tar.gz.torrent) | `34362e7d997476ed972d475b93b876f3` |
 
+####Isolated and Trimmed Driving Data
+With the help of [Auro Robotics](http://www.aurobots.com/), compression, and selective recording, we now have considerably smaller datasets that will be available shortly. You can find instructions for these datasets, when available, in the /datasets/udacity_launch readme.
+
 ## Contributions
 Here's a list of the projects we've open sourced from crowdsourced contributions:
 

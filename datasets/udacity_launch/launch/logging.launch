@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!--
+Author: Jit Ray Chowdhury (jit@getauro.com)
+Last Update: 10-9-2019
+Description:  Launch logging of all usefull topics organized in speprarate bag files (logging.launch)
+-->
+<launch>
+  <!-- Destination bag file path and its folder structure -->
+  <arg name="bagPath" default="/media/Data/UdacitySDC/udacity-dataset1" />
+  <arg name="bagIdentifier" default="udacity-dataset" />
+
+  <!-- 'dataType' specifies which type of data we want to collect --> <!-- 1 to record else 0 -->
+  <!--Sensors-->
+
+  <arg name="record_velodyne_pointcloud"  default="0" />
+  <arg name="record_velodyne_packet"      default="1" />
+  <arg name="record_camera_images"        default="1" />
+  <arg name="record_vehicle"              default="1" />
+  <arg name="record_can_interface"        default="1" />
+  <arg name="record_tf"                   default="1" />
+  <arg name="record_diagnostics"          default="1" />
+
+  <arg name="republish_raw2compressed_images"   default="0" />
+
+
+
+
+<!-- RECORDING NODES  -->
+
+<!--Sensors-->
+
+  <!-- Records  velodyne PointCloud -->
+  <group if="$(arg record_velodyne_pointcloud)">
+    <node name="record_velodyne_pointcloud" pkg="rosbag" type="record" args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_sensor_velodyne_pointcloud
+      /velodyne_points
+      /velodyne_point_cloud"
+    output="screen"/>
+  </group>
+  <!-- Records  velodyne Packets -->
+  <group if="$(arg record_velodyne_packet)">
+    <node name="record_velodyne_packet" pkg="rosbag" type="record" args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_sensor_velodyne_packet
+      /velodyne_packets
+      /velodyne_packet"
+    output="screen"/>
+  </group>
+
+  <!-- Records the camera images -->
+  <group if="$(arg record_camera_images)">
+    <!-- compress images -->
+    <node  pkg="image_transport" type="republish" name="republish_center_camera"
+          args="raw in:=/center_camera/image_color  compressed out:=/center_camera/image_color"  if="$(arg republish_raw2compressed_images)" />
+    <node  pkg="image_transport" type="republish" name="republish_right_camera"
+      args="raw in:=/right_camera/image_color  compressed out:=/right_camera/image_color"  if="$(arg republish_raw2compressed_images)" />
+    <node  pkg="image_transport" type="republish" name="republish_left_camera"
+      args="raw in:=/left_camera/image_color  compressed out:=/left_camera/image_color"  if="$(arg republish_raw2compressed_images)" />
+
+    <node name="record_camera_center" pkg="rosbag" type="record"  args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_sensor_camera_center
+    /center_camera/image_color/compressed
+    /center_camera/image_color/camera_info
+    "
+    output="screen"/>
+    <node name="record_camera_left" pkg="rosbag" type="record"  args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_sensor_camera_left
+    /left_camera/image_color/compressed
+    /left_camera/image_color/camera_info
+    "
+    output="screen"/>
+    <node name="record_camera_right" pkg="rosbag" type="record"  args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_sensor_camera_right
+    /right_camera/image_color/compressed
+    /right_camera/image_color/camera_info
+    "
+    output="screen"/>
+  </group>
+
+<!--IO-->
+  <!-- Records vehicle msgs -->
+  <group if="$(arg record_vehicle)">
+    <node name="record_vehicle" pkg="rosbag" type="record" args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_io_vehicle
+     /vehicle/brake_info_report
+     /vehicle/brake_report
+     /vehicle/dbw_enabled
+     /vehicle/filtered_accel
+     /vehicle/fuel_level_report
+     /vehicle/gear_report
+     /vehicle/gps/fix
+     /vehicle/gps/time
+     /vehicle/gps/vel
+     /vehicle/imu/data_raw
+     /vehicle/joint_states
+     /vehicle/misc_1_report
+     /vehicle/sonar_cloud
+     /vehicle/steering_report
+     /vehicle/surround_report
+     /vehicle/suspension_report
+     /vehicle/throttle_info_report
+     /vehicle/throttle_report
+     /vehicle/tire_pressure_report
+     /vehicle/twist_controller/parameter_descriptions
+     /vehicle/twist_controller/parameter_updates
+     /vehicle/wheel_speed_report
+    "
+    output="screen"/>
+  </group>
+
+  <!-- Records can interface -->
+  <group if="$(arg record_can_interface)">
+    <node name="record_can_interface" pkg="rosbag" type="record" args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_io_can_interface
+    /can_bus_dbw/can_rx
+    "
+    output="screen"/>
+  </group>
+
+
+
+
+<!--Diagnostics and tf-->
+  <!-- Records the transforms -->
+  <group if="$(arg record_tf)">
+    <node name="record_tf" pkg="rosbag" type="record" args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_tf
+    /tf
+    /tf_static
+    "
+    output="screen"/>
+  </group>
+
+  <group if="$(arg record_diagnostics)">
+    <node name="record_diagnostics" pkg="rosbag" type="record"  args="
+    --split
+    --size=3999
+    -o $(arg bagPath)/$(arg bagIdentifier)_diagnostics
+    /diagnostics
+    /diagnostics_agg
+    /diagnostics_toplevel_state"
+    output="screen"/>
+  </group>
+</launch>
+
+
+
+
+
+
+
+
+
+

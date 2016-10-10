@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+Author: Jit Ray Chowdhury (jit@getauro.com)
+Last Update: 10-9-2019
+Description:  Launch logging of all usefull topics organized in speprarate bag files (logging.launch)
+-->
+<launch>
+
+  <!-- rviz -->
+  <arg name="rviz"    default="true" />
+  <arg name="rviz_file" default="$(find udacity_launch)/rviz/disp.rviz" />
+  <node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(arg rviz_file)" output="screen" if="$(arg rviz)"/>
+
+</launch>
