@@ -1,8 +1,7 @@
 
 Dataset download
 ================
-Downlaod either the content of folders as needed or to donwload the
-whole folder you can directly download the compressed file
+Download either the contents of folders as needed or entire folder.
 
 Example: Contents of udacity-dataset-2-1 or udacity-dataset-2-1.tar.bz2
 
@@ -13,7 +12,7 @@ $sudo apt-get install ros-indigo-image-transport*
 
 To play back data
 =================
-copy the udacity_launch packagae to you catkin workspace,
+copy the udacity_launch package to you catkin workspace,
 compile and source so that it is reachable.
 
 cd udacity-dataset-2-1
@@ -22,13 +21,13 @@ roslaunch udacity_launch bag_play.launch
 #For visulization
 roslaunch udacity_launch rviz.launch
 
-To log data in sperate bagfiles and compressed image
+To log data in separate bagfiles and compressed image
 ====================================================
 roslaunch udacity_launch logging.launch bagPath:="/media/Data/UdacitySDC/udacity-datasetN"
 
 
 
-To convert existing log to sperate bagfiles and compressed image
+To convert existing log to seperate bagfiles and compressed image
 ================================================================
 rosbag  play --clock old_single_huge_bagfile.bag
 roslaunch udacity_launch logging.launch republish_raw2compressed_images:=true bagPath:="/media/Data/UdacitySDC/udacity-datasetN"
