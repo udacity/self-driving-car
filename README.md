@@ -32,6 +32,8 @@ Each challenge will contain awesome prizes (cash and others) for the most effect
 | 10/10/2016 | Sunny | 03:20:02 | 21G | 23.3G | [HTTP]() | [Torrent](http://bit.ly/2dZTOcq) | `156fb6975060f60c452a9fa7c4121195` |
 | 10/20/2016 | Sunny | 03:30:00 | 30G | 40G | [HTTP]() | [Torrent](http://bit.ly/2epl7Ir ) | `13f107727bed0ee5731647b4e114a545` |
 
+Check out [udacity-driving-reader](https://github.com/rwightman/udacity-driving-reader) for some easy-to-use scripts to read or export to CSV or TensorFlow.
+
 ####Isolated and Trimmed Driving Data
 With the help of [Auro Robotics](http://www.aurobots.com/), compression, and selective recording, we now have considerably smaller datasets that will be available shortly. You can find instructions for these datasets, when available, in the /datasets/udacity_launch readme.
 
