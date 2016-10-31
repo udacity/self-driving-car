@@ -10,18 +10,18 @@ Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Ud
 
 For reference, an example file filled with '0' for every steering prediction scores 0.035665505598782017.
 
-| Rank | Team Name |     Public Score     |
-| ---- | :--------:| --------------------:|
-| 1    | komanda   | 0.0357618592522237   |
-| 2    | chaffeur  | 0.038327492103462063 |
-| 3    | synthia   | 0.11399535724415299  |
-| 4    | awbrown90 | 0.14700796916269071  |
-| 5    | af        | 0.82539587124324376  |
-| 6    |           |                      |
-| 7    |           |                      |
-| 8    |           |                      |
-| 9    |           |                      |
-| 10   |           |                      |
+| Rank | Team Name        |     Public Score     |
+| ---- | :---------------:| --------------------:|
+| 1    | komanda          | 0.0357618592522237   |
+| 2    | chaffeur         | 0.038327492103462063 |
+| 3    | three-musketeers | 0.062387797942538785 |
+| 4    | synthia          | 0.11399535724415299  |
+| 5    | awbrown90        | 0.14700796916269071  |
+| 6    | af               | 0.82539587124324376  |
+| 7    |                  |                      |
+| 8    |                  |                      |
+| 9    |                  |                      |
+| 10   |                  |                      |
  
 
  
