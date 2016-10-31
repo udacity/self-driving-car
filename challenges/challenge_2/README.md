@@ -9,10 +9,10 @@ Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Ud
 ## Leaderboard
 | Rank | Team Name |     Public Score     |
 | ---- | :--------:| --------------------:|
-| 1    | af        | 0.82539587124324376  |
-| 2    | awbrown90 | 0.14700796916269071  |
-| 3    | synthia   | 0.11399535724415299  |
-| 4    | komanda   | 0.0357618592522237   |
+| 1    | komanda   | 0.0357618592522237   |
+| 2    | synthia   | 0.11399535724415299  |
+| 3    | awbrown90 | 0.14700796916269071  |
+| 4    | af        | 0.82539587124324376  |
 | 5    |           |                      |
 | 6    |           |                      |
 | 7    |           |                      |
