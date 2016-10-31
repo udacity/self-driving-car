@@ -7,6 +7,9 @@ For detailed information on submissions for Challenge 2, please check out [this 
 Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Udacity CarND Slack Channel)](https://github.com/mxbi)! Without him, we wouldn't have any method for evaluating how well submitted code is actually performing. He is a stellar example of the incredible community that has been built around the world's first open source self-driving car at Udacity.
 
 ## Leaderboard
+
+For reference, an example file filled with '0' for every steering prediction scores 0.035665505598782017.
+
 | Rank | Team Name |     Public Score     |
 | ---- | :--------:| --------------------:|
 | 1    | komanda   | 0.0357618592522237   |
