@@ -7,18 +7,20 @@ For detailed information on submissions for Challenge 2, please check out [this 
 Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Udacity CarND Slack Channel)](https://github.com/mxbi)! Without him, we wouldn't have any method for evaluating how well submitted code is actually performing. He is a stellar example of the incredible community that has been built around the world's first open source self-driving car at Udacity.
 
 ## Leaderboard
-| Rank | Team Name | Public Score |
-| ---- | :--------:| ------------:|
-| 1    |           |              |
-| 2    |           |              |
-| 3    |           |              |
-| 4    |           |              |
-| 5    |           |              |
-| 6    |           |              |
-| 7    |           |              |
-| 8    |           |              |
-| 9    |           |              |
-| 10   |           |              |
+| Rank | Team Name |     Public Score     |
+| ---- | :--------:| --------------------:|
+| 1    | af        | 0.82539587124324376  |
+| 2    | awbrown90 | 0.14700796916269071  |
+| 3    | synthia   | 0.11399535724415299  |
+| 4    | komanda   | 0.0357618592522237   |
+| 5    |           |                      |
+| 6    |           |                      |
+| 7    |           |                      |
+| 8    |           |                      |
+| 9    |           |                      |
+| 10   |           |                      |
+ 
 
-
+ 
+ 
 
