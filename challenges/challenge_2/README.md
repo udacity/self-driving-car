@@ -13,10 +13,10 @@ For reference, an example file filled with '0' for every steering prediction sco
 | Rank | Team Name |     Public Score     |
 | ---- | :--------:| --------------------:|
 | 1    | komanda   | 0.0357618592522237   |
-| 2    | synthia   | 0.11399535724415299  |
-| 3    | awbrown90 | 0.14700796916269071  |
-| 4    | af        | 0.82539587124324376  |
-| 5    |           |                      |
+| 2    | chaffeur  | 0.038327492103462063 |
+| 3    | synthia   | 0.11399535724415299  |
+| 4    | awbrown90 | 0.14700796916269071  |
+| 5    | af        | 0.82539587124324376  |
 | 6    |           |                      |
 | 7    |           |                      |
 | 8    |           |                      |
