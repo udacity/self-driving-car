@@ -15,9 +15,9 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 1    | chauffeur        | 0.034870151954737416 |
 | 2    | three-musketeers | 0.035115597505919152 |
 | 3    | komanda          | 0.0357618592522237   |
-| 4    | synthia          | 0.11399535724415299  |
-| 5    | awbrown90        | 0.14700796916269071  |
-| 6    | af               | 0.82539587124324376  |
+| 4    | af               | 0.057757940332936082 |
+| 5    | synthia          | 0.11399535724415299  |
+| 6    | awbrown90        | 0.14700796916269071  |
 | 7    |                  |                      |
 | 8    |                  |                      |
 | 9    |                  |                      |
