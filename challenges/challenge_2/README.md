@@ -16,8 +16,8 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 2    | fsc              | 0.031239015007820548 |
 | 3    | chauffeur        | 0.031634182464218334 |
 | 4    | jeffd23          | 0.032051813065997546 |
-| 5    | ai-world         | 0.034534684455044026 |
-| 6    | three-musketeers | 0.034889405460392348 |
+| 5    | three-musketeers | 0.032605030514830456 |
+| 6    | ai-world         | 0.034534684455044026 |
 | 7    | abhay            | 0.035392120689470993 |
 | 8    | bitas            | 0.035489562123341999 |
 | 9    | alex-hertzberg   | 0.035896838359604173 |
