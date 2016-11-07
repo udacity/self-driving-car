@@ -13,10 +13,11 @@ For reference, an example file filled with '0' for every steering prediction sco
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
 | 1    | komanda          | 0.027976966716928356 |
+| 2    | epoch            | 0.029204824313005848 |
 | 2    | fsc              | 0.031239015007820548 |
 | 3    | chauffeur        | 0.031634182464218334 |
+| 5    | three-musketeers | 0.03190071286740985  |
 | 4    | jeffd23          | 0.032051813065997546 |
-| 5    | three-musketeers | 0.032605030514830456 |
 | 6    | ai-world         | 0.034534684455044026 |
 | 7    | abhay            | 0.035392120689470993 |
 | 8    | bitas            | 0.035489562123341999 |
@@ -25,9 +26,9 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 11   | team-sf          | 0.042257311918569483 |
 | 12   | synthia          | 0.04238147430465701  |
 | 13   | ND               | 0.049062130923347672 |
-| 14   | af               | 0.057757940332936082 |
-| 15   | rs               | 0.08936421165242589  |
-| 16   | awbrown90        | 0.14700796916269071  |
+| 14   | awbrown90        | 0.055953862215580311 |
+| 15   | af               | 0.057757940332936082 |
+| 16   | rs               | 0.08936421165242589  |
 
  
 
