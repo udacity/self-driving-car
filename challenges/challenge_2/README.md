@@ -20,6 +20,7 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 6    | three-musketeers | 0.031684487565107521 |
 | 7    | lookma           | 0.032862606193922166 |
 | 8    | ai-world         | 0.034534684455044026 |
+| 8    | rambo            | 0.035284533320253761 |
 | 9    | abhay            | 0.035392120689470993 |
 | 10   | bitas            | 0.035489562123341999 |
 | 11   | go-bears         | 0.036032245140498909 |
