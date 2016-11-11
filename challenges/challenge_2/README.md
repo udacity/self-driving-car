@@ -12,7 +12,7 @@ For reference, an example file filled with '0' for every steering prediction sco
 
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
-| 1    | komanda          | 0.022728149687903185 |
+| 1    | komanda          | 0.021266037694441069 |
 | 2    | rambo            | 0.024043031353416212 |
 | 3    | rwightman        | 0.025382078860711952 |
 | 4    | chauffeur        | 0.027683597569820563 |
@@ -33,9 +33,9 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 19   | rs               | 0.041964090551539428 |
 | 20   | team-sf          | 0.042257311918569483 |
 | 21   | synthia          | 0.04238147430465701  |
-| 22   | bower            | 0.043651973982794669 |
-| 23   | af               | 0.048970820704573488 |
-| 24   | awbrown90        | 0.055953862215580311 |
+| 22   | bower            | 0.043651973982794669 | 
+| 24   | gauss            | 0.054089840628736362 |
+| 25   | awbrown90        | 0.055953862215580311 |
 
  
 
