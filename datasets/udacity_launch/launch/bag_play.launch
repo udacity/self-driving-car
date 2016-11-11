@@ -7,8 +7,6 @@ Description:  Launch logging of all usefull topics organized in speprarate bag f
 <launch>
   <param name="use_sim_time" value="true"/>
 
-
-  <include file="$(find scu_launch)/config/global_parameters.xml" />
   <arg name="velodyne_packet2pointcloud"                default="false" />
   <arg name="velodyne_packets2pointcloud"               default="false" />
   <arg name="camera_compressed_to_full"                 default="true" />
