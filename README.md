@@ -35,7 +35,7 @@ Each challenge will contain awesome prizes (cash and others) for the most effect
 Check out [udacity-driving-reader](https://github.com/rwightman/udacity-driving-reader) for some easy-to-use scripts to read or export to CSV or TensorFlow.
 
 ####Isolated and Trimmed Driving Data
-With the help of [Auro Robotics](http://www.aurobots.com/), compression, and selective recording, we now have considerably smaller datasets that will be available shortly. You can find instructions for these datasets, when available, in the /datasets/udacity_launch readme.
+With the help of [Auro Robotics](http://www.auro.ai/), compression, and selective recording, we now have considerably smaller datasets that will be available shortly. You can find instructions for these datasets, when available, in the /datasets/udacity_launch readme.
 
 ## Contributions
 Here's a list of the projects we've open sourced from crowdsourced contributions:
