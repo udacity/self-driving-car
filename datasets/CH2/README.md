@@ -1,4 +1,4 @@
-##CH2_001 
+#CH2_001: Final Round Test Data: JPG and Filtered ROSBAG
 | Date | Lighting Conditions | Duration | Compressed Size | Direct Download | Torrent | MD5 |
 | ---- | :------------------:| --------:| ---------------:|:---------------:|:-------:|:---:|
 | 11/18/2016 | Daytime/Shadows | 280s | 456 MB | [HTTP]() | [Torrent](https://github.com/udacity/self-driving-car/blob/master/datasets/CH2/Ch2_001.tar.gz.torrent) | 844ad71fe6a44eb50d1183aed0e71efc |
@@ -17,7 +17,7 @@ The HMB_3_release.bag file was created using the following filter rules:
 rosbag filter HMB_3.bag HMB_3_release.bag "topic == '/center_camera/camera_info' or topic == '/center_camera/image_color/compressed'"
 ```
 
-#CH2_002
+#CH2_002: Training data with tight turns
 | Date | Lighting Conditions | Duration | Compressed Size | Direct Download | Torrent | MD5 |
 | ---- | :------------------:| --------:| ---------------:|:---------------:|:-------:|:---:|
 | 11/18/2016 | Daytime/Shadows | -- | 4.4GB | None | [Torrent](https://github.com/udacity/self-driving-car/blob/master/datasets/CH2/Ch2_002.tar.gz.torrent) | f3178f88d9b970ed19be01d700b52a9f |
