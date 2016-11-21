@@ -1,4 +1,4 @@
-# Udacity Self Driving Car Open Source Data
+# Dataset Wiki
 In an attempt to cleanup the data release practices of the Udacity Self-Driving Car team, we will start maintaining this wiki of data we have uploaded. Issues persist throughout many of the datasets, so we will be working backwards to catalog legacy data and unify the naming methodology. Please feel free to add to this list and submit a PR.
 
 Check out [udacity-driving-reader](https://github.com/rwightman/udacity-driving-reader) for some easy-to-use scripts to read or export to CSV or TensorFlow.

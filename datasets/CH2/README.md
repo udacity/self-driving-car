@@ -3,24 +3,21 @@ The '/center' folder contains JPG images for each test frame, similar to the Rou
 
 The file 'final_example.csv' includes a template CSV file with false values for the steering angle column, but the frame IDs are correct. You should submit you results EXACTLY as provided, as I will not be fixing submissions for the final round. When you have output from your model, please send your results to self-driving-car@udacity.com with the csv attached, named as 'teamName.csv' and your team members in the body of the email.
 
-The leaderboard can be found at the same location as before (https://github.com/udacity/self-driving-car/tree/master/challenges/challenge_2) and every attempt will be made ot update as often as possible. If someone in the community wants to build an automated submission system, please contact me and I'd be happy to work with you on this. You'll get massive props on the Udacity github.
+The leaderboard can be found at the same location as before (https://github.com/udacity/self-driving-car/tree/master/challenges/challenge_2) and every attempt will be made to update as often as possible. If someone in the community wants to build an automated submission system, please contact me and I'd be happy to work with you on this. You'll get massive props on the Udacity github.
 
 HMB_3.bag is not included, as it is the test dataset, but I've included a filtered HMB_3_release.bag which only includes the center camera imagery, camera info topic, and timing information. I know many of you asked for this last time.
 
 The HMB_3_release.bag file was created using the following filter rules: 
 
+```
 rosbag filter HMB_3.bag HMB_3_release.bag "topic == '/center_camera/camera_info' or topic == '/center_camera/image_color/compressed'"
+```
 
 #CH2_002
-HMB_1: 221 seconds, direct sunlight, many lighting changes. Good turns in beginning, discontinuous shoulder lines, ends in lane merge, divided highway
-
-HMB_2: 791 seconds, two lane road, shadows are prevalent, traffic signal (green), very tight turns where center camera can't see much of the road, direct sunlight, fast elevation changes leading to steep gains/losses over summit. Turns into divided highway around 350s, quickly returns to 2 lanes
-
-HMB_3: 281 seconds, two lane road in sunlight and shadows. Ends when divided highway begins
-
-HMB_4: 99 seconds, divided highway segment of return trip over the summit
-
-HMB_5: 212 seconds, guardrail and two lane road, shadows in beginning may make training difficult, mostly normalizes towards the end
-
-HMB_6: 371 seconds, divided multi-lane highway with a fair amount of traffic
+*HMB_1: 221 seconds, direct sunlight, many lighting changes. Good turns in beginning, discontinuous shoulder lines, ends in lane merge, divided highway
+*HMB_2: 791 seconds, two lane road, shadows are prevalent, traffic signal (green), very tight turns where center camera can't see much of the road, direct sunlight, fast elevation changes leading to steep gains/losses over summit. Turns into divided highway around 350s, quickly returns to 2 lanes
+*HMB_3: 281 seconds, two lane road in sunlight and shadows. Ends when divided highway begins
+*HMB_4: 99 seconds, divided highway segment of return trip over the summit
+*HMB_5: 212 seconds, guardrail and two lane road, shadows in beginning may make training difficult, mostly normalizes towards the end
+*HMB_6: 371 seconds, divided multi-lane highway with a fair amount of traffic
 
