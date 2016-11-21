@@ -9,18 +9,18 @@ These releases should be issue/error free and comply with the new naming schema.
 #### Challenge 2 Driving Data
 | Name | Purpose |
 |:----:|:-------:|
-| [CH2_001]() | Final testing data for the last round of Challenge 2 |
-| [CH2_002]() | Training data with very similar driving conditions to Ch2_001 |
+| [CH2_001](https://github.com/udacity/self-driving-car/tree/master/datasets/CH2) | Final testing data for the last round of Challenge 2 |
+| [CH2_002](https://github.com/udacity/self-driving-car/tree/master/datasets/CH2) | Training data with very similar driving conditions to Ch2_001 |
 
 #### Challenge 3 Driving Data
 | Name | Purpose |
 |:----:|:-------:|
-| [CH3_001]() | Northbound and Southbound drives on El Camino with IMU positioning |
+| [CH3_001](https://github.com/udacity/self-driving-car/tree/master/datasets/CH3) | Northbound and Southbound drives on El Camino with IMU positioning |
 
 #### Misc. Driving Data
 | Name | Purpose |
 |:----:|:-------:|
-| [CHX_001]() | Lap around block at Udacity office with new HDL-32E LIDAR |
+| [CHX_001](https://github.com/udacity/self-driving-car/tree/master/datasets/CHX) | Lap around block at Udacity office with new HDL-32E LIDAR |
 
 ##Legacy Data
 
