@@ -6,6 +6,10 @@ For detailed information on submissions for Challenge 2, please check out [this 
 ## Neural Network Evaluation Code
 Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Udacity CarND Slack Channel)](https://github.com/mxbi)! Without him, we wouldn't have any method for evaluating how well submitted code is actually performing. He is a stellar example of the incredible community that has been built around the world's first open source self-driving car at Udacity.
 
+## Final Leaderboard
+| Rank | Team Name        |     Public Score     |    Private Score     |
+| ---- | :---------------:| --------------------:| --------------------:|
+
 ## Leaderboard
 
 For reference, an example file filled with '0' for every steering prediction scores 0.035665505598782017.
