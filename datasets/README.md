@@ -4,7 +4,7 @@ In an attempt to cleanup the data release practices of the Udacity Self-Driving 
 Check out [udacity-driving-reader](https://github.com/rwightman/udacity-driving-reader) for some easy-to-use scripts to read or export to CSV or TensorFlow.
 
 ##Current Releases
-#### These releases should be issue/error free and comply with the new naming schema.
+These releases should be issue/error free and comply with the new naming schema.
 
 #### Challenge 2 Driving Data
 | Name | Purpose |
@@ -24,9 +24,8 @@ Check out [udacity-driving-reader](https://github.com/rwightman/udacity-driving-
 
 ##Legacy Data
 
-[All torrent releases from Udacity can be found on our AcademicTorrents page with associated descriptions.](http://academictorrents.com/userdetails.php?id=5125)
+[All torrent releases from Udacity can be found on our AcademicTorrents page with associated descriptions.](http://academictorrents.com/userdetails.php?id=5125) These releases are old and likely have issues that make them unsuitable for training, but many are useful. We will update legacy releases with more info as we move forward, but please use them only as a reference for now if you don't check them beforehand.
 
-#### These releases are old and likely have issues that make them unsuitable for training. Please use only as a reference.
 ####Driving Data
 | Date | Lighting Conditions | Duration | Compressed Size | Uncompressed | Direct Download | Torrent | MD5 |
 | ---- | :------------------:| --------:| ---------------:| ------------:|:---------------:|:-------:|:---:|
