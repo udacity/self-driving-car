@@ -14,10 +14,10 @@ rosbag filter HMB_3.bag HMB_3_release.bag "topic == '/center_camera/camera_info'
 ```
 
 #CH2_002
-*HMB_1: 221 seconds, direct sunlight, many lighting changes. Good turns in beginning, discontinuous shoulder lines, ends in lane merge, divided highway
-*HMB_2: 791 seconds, two lane road, shadows are prevalent, traffic signal (green), very tight turns where center camera can't see much of the road, direct sunlight, fast elevation changes leading to steep gains/losses over summit. Turns into divided highway around 350s, quickly returns to 2 lanes
-*HMB_3: 281 seconds, two lane road in sunlight and shadows. Ends when divided highway begins
-*HMB_4: 99 seconds, divided highway segment of return trip over the summit
-*HMB_5: 212 seconds, guardrail and two lane road, shadows in beginning may make training difficult, mostly normalizes towards the end
-*HMB_6: 371 seconds, divided multi-lane highway with a fair amount of traffic
+* HMB_1: 221 seconds, direct sunlight, many lighting changes. Good turns in beginning, discontinuous shoulder lines, ends in lane merge, divided highway
+* HMB_2: 791 seconds, two lane road, shadows are prevalent, traffic signal (green), very tight turns where center camera can't see much of the road, direct sunlight, fast elevation changes leading to steep gains/losses over summit. Turns into divided highway around 350s, quickly returns to 2 lanes
+* HMB_3: 281 seconds, two lane road in sunlight and shadows. Ends when divided highway begins
+* HMB_4: 99 seconds, divided highway segment of return trip over the summit
+* HMB_5: 212 seconds, guardrail and two lane road, shadows in beginning may make training difficult, mostly normalizes towards the end
+* HMB_6: 371 seconds, divided multi-lane highway with a fair amount of traffic
 
