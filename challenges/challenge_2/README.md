@@ -10,8 +10,8 @@ Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Ud
 
 For reference, an example file filled with '0' for every steering prediction scores 0.20678229236453141.
 
-| Rank | Team Name        |     Public Score     |    Private Score     |
-| ---- | :---------------:| --------------------:| --------------------:|
+| Rank | Team Name        |     Public Score     |
+| ---- | :---------------:| --------------------:|
 
 ## Round 1 Leaderboard
 
