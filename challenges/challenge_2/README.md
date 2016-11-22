@@ -10,11 +10,6 @@ Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Ud
 
 For reference, an example file filled with '0' for every steering prediction scores 0.20678229236453141.
 
-lookma 0.16249481094522622
-rwightman 0.16752180711045245
-
-
-
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
 | 1    | komanda | 0.10190643977470799 |
