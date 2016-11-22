@@ -2,7 +2,7 @@
 ##Final Round Test Data: JPG and Filtered ROSBAG
 | Date | Lighting Conditions | Duration | Compressed Size | Direct Download | Torrent | MD5 |
 | ---- | :------------------:| --------:| ---------------:|:---------------:|:-------:|:---:|
-| 11/18/2016 | Daytime/Shadows | 280s | 456 MB | [HTTP]() | [Torrent](https://github.com/udacity/self-driving-car/blob/master/datasets/CH2/Ch2_001.tar.gz.torrent) | 844ad71fe6a44eb50d1183aed0e71efc |
+| 11/18/2016 | Daytime/Shadows | 280s | 456 MB | Avail. Soon | [Torrent](https://github.com/udacity/self-driving-car/blob/master/datasets/CH2/Ch2_001.tar.gz.torrent) | 844ad71fe6a44eb50d1183aed0e71efc |
 
 The '/center' folder contains JPG images for each test frame, similar to the Round 1 evaluation set. The decision was made to move to JPG from PNG to save file space, and should not cause any artifacting due to the size of the images. If you would like to ge tthe image set in PNG, you can either convert the folder in batch using a tool like IRFANVIEW, or use rwightman's Udacity Reader docker tool (https://github.com/rwightman/udacity-driving-reader) using the PNG flag. I suggest using a batch convert process to avoid complications with not having the original BAG file with all topics, as you will likely need to modify the code in the docker tool. 
 
