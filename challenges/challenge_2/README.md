@@ -12,6 +12,21 @@ For reference, an example file filled with '0' for every steering prediction sco
 
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
+| 1    | | |
+| 2    | | |
+| 3    | | |
+| 4    | | |
+| 5    | | |
+| 6    | | |
+| 7    | | |
+| 8    | | |
+| 9    | | |
+| 10   | | |
+| 11   | | |
+| 12   | | |
+| 13   | | |
+| 14   | | |
+| 15   | | |
 
 ## Round 1 Leaderboard
 
