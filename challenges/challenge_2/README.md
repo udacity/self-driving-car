@@ -15,8 +15,8 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 1    | komanda | 0.072616067521479588 |
 | 2    | chauffeur | 0.073878151138227807 |
 | 3    | rwightman | 0.094853667346343415 |
-| 4    | ai-world | 0.11078025298392412 |
-| 5    | autumn | 0.10357661436661363 |
+| 4    | autumn | 0.10357661436661363 |
+| 5    | ai-world | 0.11078025298392412 |
 | 6    | bitas | 0.11155942562369695 |
 | 7    | lookma | 0.16249481094522622 |
 | 8    | bauer | 0.16351171260316094 |
