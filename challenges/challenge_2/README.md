@@ -12,7 +12,7 @@ For reference, an example file filled with '0' for every steering prediction sco
 
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
-| 1    | komanda | 0.072616067521479588 |
+| 1    | komanda | 0.052978344099912707 |
 | 2    | chauffeur | 0.073878151138227807 |
 | 3    | rwightman | 0.094853667346343415 |
 | 4    | autumn | 0.10357661436661363 |
