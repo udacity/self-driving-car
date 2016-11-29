@@ -17,8 +17,8 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 3    | chauffeur | 0.058163295965646088 |
 | 4    | autumn | 0.062344717702119072 |
 | 5    | lookma | 0.074483685128619179 |
-| 6    | rwightman | 0.081402606768664912 |
-| 7    | epoch | 0.087468022256547831 |
+| 6    | epoch | 0.078404583311544679 |
+| 7    | rwightman | 0.081402606768664912 |
 | 8    | bitas | 0.096749171452363766 |
 | 9    | ai-world | 0.10286873701350439 |
 | 10   | bauer | 0.1061797124434752 |
