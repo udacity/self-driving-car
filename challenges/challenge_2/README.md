@@ -13,11 +13,11 @@ For reference, an example file filled with '0' for every steering prediction sco
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
 | 1    | komanda | 0.048291051168221931 |
-| 2    | autumn | 0.052986863426509628 |
+| 2    | autumn | 0.048816941650995149 |
 | 3    | rambo | 0.057877752941671669 |
 | 4    | chauffeur | 0.058163295965646088 |
 | 5    | lookma | 0.074483685128619179 |
-| 6    | epoch | 0.078404583311544679 |
+| 6    | epoch | 0.07919880182663773 |
 | 7    | rwightman | 0.081402606768664912 |
 | 8    | bitas | 0.096749171452363766 |
 | 9    | ai-world | 0.10286873701350439 |
