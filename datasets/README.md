@@ -16,6 +16,7 @@ These releases should be issue/error free and comply with the new naming schema.
 | Name | Purpose |
 |:----:|:-------:|
 | [CH3_001](https://github.com/udacity/self-driving-car/tree/master/datasets/CH3) | Northbound and Southbound drives on El Camino with IMU positioning |
+| [CH3_002](https://github.com/udacity/self-driving-car/tree/master/datasets/CH3) | Continuous North/South on El Camino with IMU positioning and HDL-32E LIDAR |
 
 #### Misc. Driving Data
 | Name | Purpose |
