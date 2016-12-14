@@ -1,11 +1,11 @@
 <img src="../../images/challenge3.png" alt="Self-Driving Car" width="800px">
 
 ## Challenge 3
-For detailed information on submissions for Challenge3, please check out [this medium post]() by [@macjshiggins](https://twitter.com/macjshiggins)
+Please email submissions to self-driving-car@udacity.com, in the same format as ch3_example.csv, as found in this directory. Submissions may not use future frames. In order to accomodate "initialization" periods, the first 12 frames in the test set will not be evaluated. Twitterbot will be up soon for automated evaluations.
 
 ## Leaderboard
 
-For reference, an example file filled with '0' for every steering prediction scores 0.035665505598782017.
+For reference, an example file filled with '0' for every steering prediction scores NA.
 
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
@@ -24,12 +24,4 @@ For reference, an example file filled with '0' for every steering prediction sco
 | 13   |||
 | 14   |||
 | 15   |||
-
-
- 
-
-
-
-
-
 
