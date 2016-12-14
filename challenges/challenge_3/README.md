@@ -9,7 +9,7 @@ For reference, an example file filled with '0' for every steering prediction sco
 
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
-| 1    |||
+| 1    | MU_DeepLearning | 6.3362813836638434 |
 | 2    |||
 | 3    |||
 | 4    |||
