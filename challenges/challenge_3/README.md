@@ -10,10 +10,10 @@ For reference, an example file filled with '0' for every steering prediction sco
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
 | 1    | LastMinute | 4.8463073166889172 |
-| 2    | Robocar | 4.8549604427357398 |
-| 3    | MU_DeepLearning | 6.3362813836638434 |
-| 4    |||
-| 5    |||
+| 2    | Robocar | 4.8522556693111421 |
+| 3    | RoboAuto | 4.8460682826220767 |
+| 4    | rwightman | 5.9703210438559005 |
+| 5    | MU_DeepLearning | 6.3362813836638434 |
 | 6    |||
 | 7    |||
 | 8    |||
