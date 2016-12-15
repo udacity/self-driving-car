@@ -1,5 +1,3 @@
-<img src="../../images/cover.png" alt="Self-Driving Car" width="800px">
-
 ## Evaluation
 
 Download the model from S3 and use the appropriate script to evaluate against a bag.
