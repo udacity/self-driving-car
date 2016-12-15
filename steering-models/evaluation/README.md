@@ -2,7 +2,7 @@
 
 ## Evaluation
 
-Downlaod the model from S3 and use the appropriate script to evaluate against a bag.
+Download the model from S3 and use the appropriate script to evaluate against a bag.
 
 ### Models available:
 
