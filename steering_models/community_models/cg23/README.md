@@ -76,14 +76,14 @@ If you make it through that process, then you are at least half way there!
 
 ## Exploration
 Each image and steering angle is associated with a certain timestamp. I copied dolaameng’s approach, which was to average the steering angles within each timestamp. The datasets were also somewhat cleaned by Udacity (stoplights and lane changes removed) so the timestamps were not continuous. I wrote a script (data_explore.py) that plotted all of the steering angles for each consecutive series of timestamps, so that I could further clean/select my training data.
-![alt tag](https://github.com/chrisgundling/UdacitySDC-Challenge2/blob/master/Steering1.png)
+![alt tag](Steering1.png)
 
 # Data Processing and Augmentation
 This is where most of the gains in my performance were made. I used different approaches for Round 1 and Round 2, which are described below. Note that for Round 1, the Half Moon Bay dataset (lots of curves) had not yet been released.
 
 ## Round 1 
 For the first Round I used only the center camera data from Dataset 1 to train my model. The key technique that I implemented during this Round was k-fold cross validation. After running through all the k-folds, I chose a single training set and validation set that gave me a close match the RMS error that I was seeing on the leaderboard. I re-trained the model with just this training and validation data. This allowed me to make informed changes to my model. You can see the plot of my validation performance below (Validation RMS = 0.028 versus Leaderboard Test RMS=0.029). 
-![alt tag](https://github.com/chrisgundling/UdacitySDC-Challenge2/blob/master/cnn_1600Test_Round1.png)
+![alt tag](cnn_1600Test_Round1.png)
 
 I also applied these techniques:
   1.	Cropped the center camera images to be 280 X 640 (removed most of the image above the horizon line).
@@ -159,12 +159,12 @@ https://github.com/udacity/self-driving-car/tree/master/challenges/challenge_2
 This video shows the results of the model for the test section on Highway 92 and was based on comma.ai's research:
 https://www.youtube.com/watch?v=huwkqWXVax8&t=131s       (The script is epoch_viewer.py)
 
-<img src="https://github.com/chrisgundling/UdacitySDC-Challenge2/blob/master/Round2_Image.png" width="320">
+<img src="Round2_Image.png" width="320">
 
 Here is the model in the simulator for the behavioral cloning project, without training the model on any simulator data, only real word data, here is the result:
 https://www.youtube.com/watch?v=EcS5JPSH-sI
 
-<img src="https://github.com/chrisgundling/UdacitySDC-Challenge2/blob/master/Simulator_Image.png" width="320">
+<img src="Simulator_Image.png" width="320">
 
 *Note that I did have to change the sign on the steering angles and scale them due to the wider road/lanes in the simulator. Would be interesting to see if a model only trained in the simulator or on a combination of simulator/real world data could outperform the current model.
 
