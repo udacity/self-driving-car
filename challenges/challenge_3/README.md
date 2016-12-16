@@ -5,7 +5,7 @@ Please email submissions to self-driving-car@udacity.com, in the same format as 
 
 ## Leaderboard
 
-For reference, an example file filled with '0' for every steering prediction scores NA.
+For reference, the randomized example file in this repo scores 8.386485292112182.
 
 | Rank | Team Name        |     Public Score     |
 | ---- | :---------------:| --------------------:|
