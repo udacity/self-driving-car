@@ -11,7 +11,7 @@ For reference, the randomized example file in this repo scores 8.386485292112182
 | ---- | :---------------:| --------------------:|
 | 1    | RoboAuto | 4.845658183741314 |
 | 2    | LastMinute | 4.8463073166889172 |
-| 3    | Robocar | 4.8522556693111421 |
+| 3    | Robocar | 4.8493521240793251 |
 | 4    | MU_DeepLearning | 5.0180455060795186 |
 | 5    | rwightman | 5.9703210438559005 |
 | 6    |||
