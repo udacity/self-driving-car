@@ -34,5 +34,5 @@ Here's a list of the projects we've open sourced from crowdsourced contributions
 [@olivercameron](https://twitter.com/olivercameron)<br>
 
 ## Open Source Base Software Support
-<img src="images/autoware_logo_1.png" alt="Autoware" width="400px">
-
+<img src="images/autoware_logo_1.png" alt="Autoware" width="200px"><br>
+<img src="images/Tier_IV_logo_1.png" alt="Tier IV" width="200px">
