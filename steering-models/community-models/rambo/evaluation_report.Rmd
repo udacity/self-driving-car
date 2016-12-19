@@ -1,0 +1,173 @@
+---
+title: "Evaluation report"
+output: html_document
+params:
+  input_data: default.csv
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(out.width='\\textwidth', message=FALSE, echo=FALSE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(png)
+
+input = read.csv(params$input_data)
+test = read.table("data/test.txt", sep=",", header = T, as.is=T)
+
+# some inputs have less predictions values
+# impute them with training set mean
+train_mean = -0.00229459500043189
+num_impute_mean = nrow(test) - nrow(input)
+
+print(paste0("Inserting ", num_impute_mean, " mean values in the beginning of predictions."))
+
+test$pred = c(rep(train_mean, num_impute_mean), input$steering_angle)
+
+# check the ordering
+#tmp = test$angle[(num_impute_mean+1):nrow(test)] == input$y_true
+#if(!all(tmp)){
+#  print("Max diff between test$angle and input$y_true: ")
+#  print(max(test$angle[(num_impute_mean+1):nrow(test)] - input$y_true))
+#}
+#test$y_ture = c(rep(NA, num_impute_mean), input$y_true)
+```
+
+
+### Summary statistics
+
+```{r}
+rmse = function(true, pred){
+  sqrt(mean((true - pred)^2))
+}
+
+mse = function(true, pred){
+  mean((true - pred)^2)
+}
+
+print(paste0("RMSE: ", round(rmse(test$angle, test$pred), 4)))
+print(paste0("MSE: ", round(mse(test$angle, test$pred), 5)))
+
+test %>%
+  group_by(dt_index) %>%
+  summarise(RMSE = rmse(angle, pred),
+            count = n()) %>%
+  kable()
+```
+
+### Plots
+
+```{r}
+ggplot(test, aes(x=pred)) +
+  geom_histogram() +
+  ggtitle("Predictions") +
+  theme_minimal()
+
+ggplot(test, aes(x=angle - pred)) +
+  geom_histogram() +
+  ggtitle("Errors") +
+  theme_minimal()
+
+ggplot(test, aes(x=angle, y=pred)) +
+  geom_point() +
+  ggtitle("Angle vs Predictions") +
+  theme_minimal()
+
+ggplot(test, aes(x=angle, y=angle - pred)) +
+  geom_point() +
+  ggtitle("Angle vs Errors") +
+  theme_minimal()
+
+ggplot(test, aes(x=speed, y=angle - pred)) +
+  geom_point() +
+  ggtitle("Speed vs Errors") +
+  theme_minimal()
+
+ggplot(test, aes(x=torque, y=angle - pred)) +
+  geom_point() +
+  ggtitle("Torque vs Errors") +
+  theme_minimal()
+
+### by groups
+ggplot(test, aes(x=pred, fill=factor(dt_index))) +
+  geom_histogram() +
+  facet_wrap(~ dt_index, scales="free_y") +
+  ggtitle("Predictions") +
+  theme_minimal()
+
+ggplot(test, aes(x=angle - pred, fill=factor(dt_index))) +
+  geom_histogram() +
+  facet_wrap(~ dt_index, scales="free_y") +
+  ggtitle("Errors") +
+  theme_minimal()
+
+ggplot(test, aes(x=angle, y=pred, color=factor(dt_index))) +
+  geom_point() +
+  facet_wrap(~ dt_index) +
+  ggtitle("Angle vs Predictions") +
+  theme_minimal()
+
+ggplot(test, aes(x=angle, y=angle - pred, color=factor(dt_index))) +
+  geom_point() +
+  facet_wrap(~ dt_index) +
+  ggtitle("Angle vs Errors") +
+  theme_minimal()
+
+ggplot(test, aes(x=speed, y=angle - pred, color=factor(dt_index))) +
+  geom_point() +
+  facet_wrap(~ dt_index) +
+  ggtitle("Speed vs Errors") +
+  theme_minimal()
+
+ggplot(test, aes(x=torque, y=angle - pred, color=factor(dt_index))) +
+  geom_point() +
+  facet_wrap(~ dt_index) +
+  ggtitle("Torque vs Errors") +
+  theme_minimal()
+
+
+```
+
+### Errors
+
+#### Model says left, correct is right
+
+```{r}
+NUM_SAMPLES = 20
+
+plot_samples = function(dt_sub){
+  src_sample = dt_sub$fullpath
+  
+  par(mfrow=c(4, 5), mar=c(0.1, 0.1, 0.1, 0.1)/10)
+  for(i in 1:length(src_sample)){
+    path = src_sample[i]
+    img = readPNG(path, native=TRUE)
+    plot.new()
+    rasterImage(img,-0.03,-0.03,1.03,1.03,interpolate=FALSE)
+  }
+}
+
+sub = test %>%
+  mutate(error = angle - pred) %>%
+  arrange(desc(error)) %>%
+  head(NUM_SAMPLES)
+
+plot_samples(sub)
+kable(select(sub, timestamp, angle, pred, torque, speed, dt_index, fullpath))
+```
+
+#### Model says right, correct is left
+
+```{r}
+sub = test %>%
+  mutate(error = angle - pred) %>%
+  arrange(error) %>%
+  head(NUM_SAMPLES)
+
+plot_samples(sub)
+kable(select(sub, timestamp, angle, pred, torque, speed, dt_index, fullpath))
+```
+
