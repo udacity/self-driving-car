@@ -8,9 +8,9 @@ Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Ud
 
 ## Final Leaderboard
 
-For reference, an example file filled with '0' for every steering prediction scores 0.20678229236453141.
+Additionally, you may have noticed that Team Autumn, who had the first place submission at the end of the competition period, is not present on the final leaderboard. This is due to complications resulting in the inability to replicate their results, precluding them from the prizes in the competition. We have included [Jesse Hu's writeup here](https://github.com/udacity/self-driving-car/tree/master/steering-models/community-models/autumn) on his innovative approach to the problem using optical flow computation, along with [another model he submitted](https://github.com/udacity/self-driving-car/tree/master/steering-models/evaluation) in the evaluation section of the repository.
 
-Additionally, you may have noticed that Team Autumn, who had the first place submission at the end of the competition period, is not present on the final leaderboard. This is due to an Amazon EC2 storage corruption event, and the inability to recover the model for validation purposes. While being unable to replicate their results eliminated them from the prizes in the competition, we have included [Jesse Hu's writeup here](https://github.com/udacity/self-driving-car/tree/master/steering-models/community-models/autumn) on his innovative approach to the problem using optical flow computation, along with [another model he submitted](https://github.com/udacity/self-driving-car/tree/master/steering-models/evaluation) in the evaluation section of the repository.
+For reference, an example file filled with '0' for every steering prediction scores 0.20678229236453141.
 
 
 | Rank | Team Name |   Public Score  |  Private Score  |
