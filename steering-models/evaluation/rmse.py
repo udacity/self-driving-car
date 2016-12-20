@@ -1,6 +1,6 @@
 
 
-def rmse(prediction_fn, data_iter, *args):
+def calc_rmse(prediction_fn, data_iter, *args):
     mse = 0.
     count = 0
     for image_pred, image_disp, speed, steering, ts in data_iter:

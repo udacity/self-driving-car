@@ -10,6 +10,9 @@ Massive thanks to Machine Learning wizard [Mikel Bober-Irizar (@anokas on the Ud
 
 For reference, an example file filled with '0' for every steering prediction scores 0.20678229236453141.
 
+Additionally, you may have noticed that Team Autumn, who had the lowest scoring submission at the end, is not present on the final leaderboard. This is due to an Amazon EC2 storage corruption event, and the inability to recover the model for validation purposes. While this eliminated them from the prizes in the competition, we have included [Jesse Hu's writeup here](https://github.com/udacity/self-driving-car/tree/master/steering-models/community-models/autumn) on his innovative approach to the problem using optical flow computation, along with [another model he submitted](https://github.com/udacity/self-driving-car/tree/master/steering-models/evaluation) in the evaluations ection of the repository.
+
+
 | Rank | Team Name |   Public Score  |  Private Score  |
 | ---- | :--------:| ---------------:| ---------------:|
 | 1  | komanda     | 0.0482910511682 | 0.0512445872957 |
@@ -48,9 +51,4 @@ For reference, an example file filled with '0' for every steering prediction sco
 
 
  
-
-
-
-
-
 

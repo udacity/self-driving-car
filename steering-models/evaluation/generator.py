@@ -33,7 +33,7 @@ def gen(bag):
             if image['steering'].message.speed < 5.: continue
             s = StringIO(e.message.data)
             img = misc.imread(s)
-            yield img, np.copy(img), image['steering'].message.speed,
+            yield img, np.copy(img), image['steering'].message.speed,\
                   image['steering'].message.steering_wheel_angle, e.timestamp.to_nsec()
             last_ts = e.timestamp.to_nsec()
         else:
