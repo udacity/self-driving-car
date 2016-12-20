@@ -14,6 +14,7 @@ First, some important places to join:
 
 * Join the [announcements-only mailing list](https://groups.google.com/a/udacity.com/forum/#!forum/self-driving-car-announcements)
 * Join the [Slack team](http://nd013.udacity.com)
+* Fill out the [individual contributor agreement](https://goo.gl/forms/iIdeCge8UHpkG96C3) to be whitelisted
 
 Like any open source project, this code base will require a certain amount of thoughtfulness. However, when you add a 2-ton vehicle into the equation, we also need to make safety our absolute top priority, and pull requests just don’t cut it. To really optimize for safety, we’re breaking down the problem of making the car autonomous into **[Udacity Challenges](http://udacity.com/self-driving-car)**.
 
@@ -23,8 +24,6 @@ Each challenge will contain awesome prizes (cash and others) for the most effect
 **You can find a current list of challenges, with lots of information, on the [Udacity self-driving car page](http://udacity.com/self-driving-car). This is the primary way to contribute to this open source self-driving car project.**
 
 ## Contributions
-If you'd like to become elligible to submit code to this repository, please fill out the [individual contributor aggreement here](https://goo.gl/forms/iIdeCge8UHpkG96C3) to be whitelisted.
-
 Here's a list of the projects we've open sourced from crowdsourced contributions:
 
 * [**Camera Mount**](https://github.com/udacity/camera-mount) by [@spartanhaden](https://twitter.com/spartanhaden) – A mount to support a lens and camera body that can be mounted using standard GoPro hardware
