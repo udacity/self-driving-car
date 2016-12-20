@@ -23,6 +23,8 @@ Each challenge will contain awesome prizes (cash and others) for the most effect
 **You can find a current list of challenges, with lots of information, on the [Udacity self-driving car page](http://udacity.com/self-driving-car). This is the primary way to contribute to this open source self-driving car project.**
 
 ## Contributions
+If you'd like to become elligible to submit code to this repository, please fill out the [individual contributor aggreement here](https://goo.gl/forms/iIdeCge8UHpkG96C3) to be whitelisted.
+
 Here's a list of the projects we've open sourced from crowdsourced contributions:
 
 * [**Camera Mount**](https://github.com/udacity/camera-mount) by [@spartanhaden](https://twitter.com/spartanhaden) – A mount to support a lens and camera body that can be mounted using standard GoPro hardware
