@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="compressed" default="false" />
+  <arg name="gdb" default="false" />
+  <arg name="gdb_prefix" value="xterm -geometry 160x40 -e gdb --args" if="$(arg gdb)"/>
+  <arg name="gdb_prefix" value="" unless="$(arg gdb)"/>
+
+  <node name="udacity_place_recognition" pkg="udacity_place_recognition" type="udacity_place_recognition_node" launch-prefix="$(arg gdb_prefix)" output="screen">
+    <param if="$(arg compressed)" name="image_transport" value="compressed" />
+    <param name="brief_pattern_file" value="$(find udacity_place_recognition)/resources/brief_pattern.yml" />
+    <param name="voc_file" value="$(find udacity_place_recognition)/resources/brief_k10L6.voc.gz" />
+    <param name="image_dir" value="/tmp" />
+    <param name="pose_file" value="/tmp/lla.txt" />
+    <param name="test_image_dir" value="/home/ubuntu/data/Test/center" />
+
+    <param name="database_dir" value="" />
+
+    <param name="img_width" value="640" />
+    <param name="img_height" value="480" />
+  </node>
+</launch>
