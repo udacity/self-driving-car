@@ -92,3 +92,5 @@ The launch file should be modified with paths according to your data paths:
 ```
 roslaunch udacity_place_recognition place_recognition.launch
 ```
+
+The program first spend a while loading all the training images to construct the vocabulary. Definitely should improve this by saving the descriptors and database constructed from the training dataset, and load in the feature.

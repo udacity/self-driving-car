@@ -66,7 +66,6 @@ public:
     ros::param::param<std::string>("~voc_file", voc_file, "/tmp/voc_file.tar.gz");
     ros::param::param<std::string>("~image_dir", image_dir, "/tmp/images");
     ros::param::param<std::string>("~test_image_dir", test_image_dir, "");
-    ros::param::param<std::string>("~database_dir", database_file, "");
     ros::param::param<std::string>("~pose_file", pose_file, "/tmp/pose.txt");
 
     ROS_INFO_STREAM("brief_pattern_file: " << brief_pattern_file);
@@ -74,7 +73,6 @@ public:
     ROS_INFO_STREAM("voc_file: " << voc_file);
     ROS_INFO_STREAM("image_dir: " << image_dir);
     ROS_INFO_STREAM("test_image_dir: " << test_image_dir);
-    ROS_INFO_STREAM("database path: " << database_file);
     ROS_INFO_STREAM("pose_file: " << pose_file);
 
     place_detector_.reset(new PlaceDetector<BriefVocabulary, BriefLoopDetector, FBrief::TDescriptor>(
