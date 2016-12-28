@@ -3,6 +3,7 @@ title: "Evaluation report"
 output: html_document
 params:
   input_data: default.csv
+  img_path: /storage/round2/test/
 ---
 
 ```{r, echo=FALSE}
@@ -13,14 +14,16 @@ knitr::opts_chunk$set(out.width='\\textwidth', message=FALSE, echo=FALSE)
 library(ggplot2)
 library(dplyr)
 library(knitr)
-library(png)
+library(jpeg)
 
 input = read.csv(params$input_data)
-test = read.table("data/test.txt", sep=",", header = T, as.is=T)
+test = read.table("data/CH2_final_evaluation.csv", sep=",", header = T, 
+                  colClasses = c("character", "numeric", "integer"))
+test$fullpath = paste0(params$img_path, test$frame_id, ".jpg")
 
 # some inputs have less predictions values
 # impute them with training set mean
-train_mean = -0.00229459500043189
+train_mean = -0.004179079
 num_impute_mean = nrow(test) - nrow(input)
 
 print(paste0("Inserting ", num_impute_mean, " mean values in the beginning of predictions."))
@@ -48,14 +51,8 @@ mse = function(true, pred){
   mean((true - pred)^2)
 }
 
-print(paste0("RMSE: ", round(rmse(test$angle, test$pred), 4)))
-print(paste0("MSE: ", round(mse(test$angle, test$pred), 5)))
-
-test %>%
-  group_by(dt_index) %>%
-  summarise(RMSE = rmse(angle, pred),
-            count = n()) %>%
-  kable()
+print(paste0("RMSE: ", round(rmse(test$steering_angle, test$pred), 4)))
+print(paste0("MSE: ", round(mse(test$steering_angle, test$pred), 5)))
 ```
 
 ### Plots
@@ -66,74 +63,26 @@ ggplot(test, aes(x=pred)) +
   ggtitle("Predictions") +
   theme_minimal()
 
-ggplot(test, aes(x=angle - pred)) +
+ggplot(test, aes(x=steering_angle - pred)) +
   geom_histogram() +
   ggtitle("Errors") +
   theme_minimal()
 
-ggplot(test, aes(x=angle, y=pred)) +
+ggplot(test, aes(x=steering_angle, y=pred)) +
   geom_point() +
   ggtitle("Angle vs Predictions") +
   theme_minimal()
 
-ggplot(test, aes(x=angle, y=angle - pred)) +
+ggplot(test, aes(x=steering_angle, y=steering_angle - pred)) +
   geom_point() +
   ggtitle("Angle vs Errors") +
   theme_minimal()
-
-ggplot(test, aes(x=speed, y=angle - pred)) +
-  geom_point() +
-  ggtitle("Speed vs Errors") +
-  theme_minimal()
-
-ggplot(test, aes(x=torque, y=angle - pred)) +
-  geom_point() +
-  ggtitle("Torque vs Errors") +
-  theme_minimal()
-
-### by groups
-ggplot(test, aes(x=pred, fill=factor(dt_index))) +
-  geom_histogram() +
-  facet_wrap(~ dt_index, scales="free_y") +
-  ggtitle("Predictions") +
-  theme_minimal()
-
-ggplot(test, aes(x=angle - pred, fill=factor(dt_index))) +
-  geom_histogram() +
-  facet_wrap(~ dt_index, scales="free_y") +
-  ggtitle("Errors") +
-  theme_minimal()
-
-ggplot(test, aes(x=angle, y=pred, color=factor(dt_index))) +
-  geom_point() +
-  facet_wrap(~ dt_index) +
-  ggtitle("Angle vs Predictions") +
-  theme_minimal()
-
-ggplot(test, aes(x=angle, y=angle - pred, color=factor(dt_index))) +
-  geom_point() +
-  facet_wrap(~ dt_index) +
-  ggtitle("Angle vs Errors") +
-  theme_minimal()
-
-ggplot(test, aes(x=speed, y=angle - pred, color=factor(dt_index))) +
-  geom_point() +
-  facet_wrap(~ dt_index) +
-  ggtitle("Speed vs Errors") +
-  theme_minimal()
-
-ggplot(test, aes(x=torque, y=angle - pred, color=factor(dt_index))) +
-  geom_point() +
-  facet_wrap(~ dt_index) +
-  ggtitle("Torque vs Errors") +
-  theme_minimal()
-
 
 ```
 
-### Errors
+### Top Errors
 
-#### Model says left, correct is right
+#### Model more towards left compared to true angle
 
 ```{r}
 NUM_SAMPLES = 20
@@ -144,30 +93,30 @@ plot_samples = function(dt_sub){
   par(mfrow=c(4, 5), mar=c(0.1, 0.1, 0.1, 0.1)/10)
   for(i in 1:length(src_sample)){
     path = src_sample[i]
-    img = readPNG(path, native=TRUE)
+    img = readJPEG(path, native=TRUE)
     plot.new()
     rasterImage(img,-0.03,-0.03,1.03,1.03,interpolate=FALSE)
   }
 }
 
 sub = test %>%
-  mutate(error = angle - pred) %>%
+  mutate(error = steering_angle - pred) %>%
   arrange(desc(error)) %>%
   head(NUM_SAMPLES)
 
 plot_samples(sub)
-kable(select(sub, timestamp, angle, pred, torque, speed, dt_index, fullpath))
+kable(select(sub, frame_id, steering_angle, pred))
 ```
 
-#### Model says right, correct is left
+#### Model more towards right compared to true angle
 
 ```{r}
 sub = test %>%
-  mutate(error = angle - pred) %>%
+  mutate(error = steering_angle - pred) %>%
   arrange(error) %>%
   head(NUM_SAMPLES)
 
 plot_samples(sub)
-kable(select(sub, timestamp, angle, pred, torque, speed, dt_index, fullpath))
+kable(select(sub, frame_id, steering_angle, pred))
 ```
 
