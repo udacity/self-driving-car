@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+Author: Jit Ray Chowdhury (jit@getauro.com)
+Last Update: 10-9-2019
+Description:  Launch logging of all usefull topics organized in speprarate bag files (logging.launch)
+-->
+<launch>
+  <param name="use_sim_time" value="true"/>
+
+
+  <arg name="velodyne_packet2pointcloud"                default="false" />
+  <arg name="velodyne_packets2pointcloud"               default="false" />
+  <arg name="camera_compressed_to_full"                 default="true" />
+  <arg name="ackermann_cmd_from_trajectory_follow"      default="true" />
+
+    <!-- velodyne_packet2pointcloud -->
+    <node pkg="velodyne_decoder" type="velodyne_decoder_node" name="velodyne_decoder" if="$(arg velodyne_packet2pointcloud)" >
+      <remap from="velodyne_point_cloud" to="velodyne_points" />
+      <param name="min_range" value="0.3"/>
+      <param name="max_range" value="150"/>
+      <param name="frequency" value="20"/>
+      <param name="publish_point_cloud" value="true"/>
+    </node>
+    <!-- velodyne_packets2pointcloud -->
+    <node pkg="velodyne_pointcloud" type="cloud_node" name="velodyne_pointcloud" if="$(arg velodyne_packets2pointcloud)" >
+      <param name="min_range"   value="0.3"/>
+      <param name="max_range"   value="150"/>
+      <param name="calibration" value="$(find velodyne_pointcloud)/params/VLP16db.yaml"/>
+    </node>
+    <!-- camera_compressed_to_full -->
+    <node  pkg="image_transport" type="republish" name="republish_center_camera"
+          args="compressed in:=/center_camera/image_color2  raw out:=/center_camera/image_color2"  if="$(arg camera_compressed_to_full)"/>
+    <node  pkg="image_transport" type="republish" name="republish_center_camera2"
+          args="compressed in:=/center_camera/image_color  raw out:=/center_camera/image_color"  if="$(arg camera_compressed_to_full)"/>
+    <node  pkg="image_transport" type="republish" name="republish_right_camera"
+          args="compressed in:=/right_camera/image_color  raw out:=/right_camera/image_color"  if="$(arg camera_compressed_to_full)"/>
+    <node  pkg="image_transport" type="republish" name="republish_left_camera"
+          args="compressed in:=/left_camera/image_color  raw out:=/left_camera/image_color"  if="$(arg camera_compressed_to_full)"/>
+
+
+
+
+</launch>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>image_descriptor</name>
+  <version>1.0.0</version>
+  <description>Common image_descriptor</description>
+  <license>BSD</license>
+  <maintainer email="tomas.cernik@artin.cz">Tomáš Černík</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+
+  </export>
+</package>

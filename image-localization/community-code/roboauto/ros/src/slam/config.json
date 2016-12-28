@@ -1,0 +1,43 @@
+{
+	"enableVisualisation" : false,
+	"seed" : 1481814149,
+	"init" : {
+		"nrOfInitialResamplingSteps" : "3"
+	},
+	"clusterization" : {
+		"surroundungMeters" : "150.0"
+	},
+	"motionError" : "0.01",
+	"weightFunction" : {
+		"horizontParam" : "-0.025",
+		"polesPositive" : "1.2",
+		"polesNegative" : "1.0",
+		"signsPositive" : "1.2",
+		"signsNegative" : "1.0",
+		"lightsPositive" : "1.5",
+		"lightsNegative" : "1.0",
+		"bridgePositive" : "1.2",
+		"bridgeNegative" : "0.9"
+	},
+	"particleFilter" : {
+		"particles" : 1500,
+		"augmentedCoeficient" : "0.04"
+	},
+	"augmented" : {
+		"horizontThreshold" : "0.195",
+		"minAugmentedSize" : "100",
+		"sizeCoefUp" : "1.0002",
+		"sizeCoefDown" : "1.02",
+		"counterLimit" : 50
+	},
+	"jumpDetection" : {
+		"positionWindowSize" : 10,
+		"jumpCount" : 20,
+		"jumpTreshCoef" : 10.0
+	},
+	"horizontRoughness" : {
+		"maxJump" : "5",
+		"range" : "20",
+		"coef" : "10.0"
+	}
+} 
