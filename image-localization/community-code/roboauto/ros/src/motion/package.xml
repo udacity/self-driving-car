@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>motion</name>
+  <version>1.0.0</version>
+  <description>MOTION</description>
+  <license>BSD</license>
+  <maintainer email="tomas.cernik@artin.cz">Tomáš Černík</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>image_descriptor</build_depend>
+  <build_depend>NeuralNetwork</build_depend>
+  <build_depend>utils</build_depend>
+
+  <run_depend>utils</run_depend>
+  <run_depend>NeuralNetwork</run_depend>
+  <run_depend>image_descriptor</run_depend>
+
+  <export>
+
+  </export>
+</package>

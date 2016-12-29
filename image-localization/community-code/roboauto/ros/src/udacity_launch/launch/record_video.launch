@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+Author: Jit Ray Chowdhury (jit@getauro.com)
+Last Update: 10-9-2019
+Description:  Launch logging of all usefull topics organized in speprarate bag files (logging.launch)
+-->
+<launch>
+  <!-- may need sudo apt-get install ros-indigo-image-transport*
+  check with rosrun image_transport list_transports
+  https://coderwall.com/p/qewf6g/how-to-extract-images-from-a-rosbag-file-and-convert-them-to-video
+  -->
+<!--
+    <node  pkg="image_transport" type="republish" name="republish"
+          args="compressed in:=/sensors/camera/image_rect_color out:=/sensors/camera/image_rect_color_bag"  />
+-->
+
+    <node  pkg="image_view" type="video_recorder" name="video_recorder"  output="screen"  >
+      <param name="stamped_filename" value="false" />
+      <param name="fps" value="30" />
+      <param name="codec" value="I420" />
+<!--
+      <param name="encoding" value="bgr8" />
+-->
+      <remap from="image" to="/sensors/camera/image_rect_color"/>
+      <param name="image_transport" type="string" value="compressed"/>
+    </node>
+</launch>

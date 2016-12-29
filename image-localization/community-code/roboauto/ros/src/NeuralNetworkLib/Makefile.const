@@ -1,0 +1,12 @@
+CXX=g++ -m64
+CXXFLAGS+= -Wall -Wextra -pedantic -Weffc++ -Wshadow -Wstrict-aliasing -ansi -Woverloaded-virtual -Wdelete-non-virtual-dtor -Wno-unused-function
+CXXFLAGS+= -std=c++14 
+#-fprefetch-loop-arrays
+CXXFLAGS+= -pg -fPIC
+CXXFLAGS+= -g
+CXXFLAGS+= -fPIC -pthread y
+#CXXFLAGS+= -DUSE_SSE2
+OPTIMALIZATION = -O3 -march=native -mtune=native
+
+%.o : %.cpp %.h
+	$(CXX) $(CXXFLAGS) $(OPTIMALIZATION) -c $< -o $@

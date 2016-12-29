@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8.3)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")
+
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast -march=native -mtune=native")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -Ofast -g")
+
+STRING(REGEX REPLACE "/ros/.*$" "/ros/src/cmake_config/cmake_modules" ROBOAUTO_CMAKE_MODULES ${CMAKE_SOURCE_DIR})
+
+list(APPEND CMAKE_MODULE_PATH "${ROBOAUTO_CMAKE_MODULES}")

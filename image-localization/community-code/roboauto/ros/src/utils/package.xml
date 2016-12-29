@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>utils</name>
+  <version>1.0.0</version>
+  <description>Common roboauto utilities</description>
+  <license>BSD</license>
+  <maintainer email="tomas.cernik@artin.cz">Tomáš Černík</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>image_descriptor</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- You can specify that this package is a metapackage here: -->
+    <!-- <metapackage/> -->
+
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

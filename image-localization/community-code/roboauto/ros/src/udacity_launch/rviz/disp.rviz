@@ -1,0 +1,150 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded: ~
+      Splitter Ratio: 0.784387
+    Tree Height: 775
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: camera_left
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: false
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 1000
+      Reference Frame: <Fixed Frame>
+      Value: false
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /left_camera/image_color
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: camera_left
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /right_camera/image_color
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: camera_right
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /center_camera/image_color
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: camera_center
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /interactive_waypoint/add_waypoint
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+    - Class: auro_rviz_plugins/OverlayPicker
+  Value: true
+  Views:
+    Current:
+      Class: rviz/XYOrbit
+      Distance: 40.536
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 9.36953
+        Y: 9.61656
+        Z: 3.8147e-06
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.9698
+      Target Frame: base_link
+      Value: XYOrbit (rviz)
+      Yaw: 6.24858
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1056
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000001b700000396fc020000000efb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000396000000dd00fffffffb0000000a0049006d006100670065010000026e000001500000000000000000fb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006102000003a9000000ab000002e00000029afb0000000a0049006d0061006700650100000249000001760000000000000000fb0000000a0049006d00610067006501000001d4000000780000000000000000fb0000001600630061006d006500720061005f006c006500660074030000004f0000021c00000288000001bafb0000001a00630061006d006500720061005f00630065006e00740065007203000002ba0000021c00000258000001bbfb0000001800630061006d006500720061005f0072006900670068007403000005000000021d00000268000001bc000000010000010f00000396fc0200000004fb0000001e0054006f006f006c002000500072006f007000650072007400690065007301000000280000013d0000006400fffffffb0000000a00560069006500770073010000016b00000253000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007301000002cc000000f30000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007510000003efc0100000002fb0000000800540069006d0065010000000000000751000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000047f0000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1873
+  X: 47
+  Y: 24
+  camera_center:
+    collapsed: false
+  camera_left:
+    collapsed: false
+  camera_right:
+    collapsed: false

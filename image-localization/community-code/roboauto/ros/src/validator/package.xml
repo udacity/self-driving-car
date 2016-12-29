@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>validator</name>
+  <version>0.0.0</version>
+  <description>VALIDATOR</description>
+  <license>BSD</license>
+  <maintainer email="branislav.sevc@artin.cz">Branislav Ševc</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>utils</build_depend>
+  <build_depend>motion</build_depend>
+  
+  <run_depend>utils</run_depend>
+  <run_depend>motion</run_depend>
+
+  <export>
+
+  </export>
+</package>
