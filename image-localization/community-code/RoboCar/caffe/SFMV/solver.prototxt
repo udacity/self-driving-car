@@ -1,0 +1,17 @@
+net: "./caffe/SFMV/train_val.prototxt"
+test_iter: 200
+test_interval: 6000
+display: 500
+average_loss: 500
+base_lr: 0.001
+lr_policy: "poly"
+power: 0.5
+max_iter: 360000
+momentum: 0.9
+momentum2: 0.999
+delta: 0.00000001
+weight_decay: 0.0002
+snapshot: 6000
+type: "Adam"
+snapshot_prefix: "./caffe/SFMV/googlenet_train"
+solver_mode: GPU
