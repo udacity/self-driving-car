@@ -1,0 +1,14 @@
+net: "./caffe/way/train_val.prototxt"
+test_iter: 200
+test_interval: 6000
+display: 500
+average_loss: 500
+base_lr: 0.01
+lr_policy: "poly"
+power: 0.5
+max_iter: 60000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 12000
+snapshot_prefix: "./caffe/way/googlenet_train"
+solver_mode: GPU
