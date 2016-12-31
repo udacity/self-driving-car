@@ -104,16 +104,27 @@ python ./python/make_predictions.py
 
 
 ##Data structure
+
 _./data_ folder with unbagged raw data. Initial .bag data files were processed with bagdump.py
+
 _./data/Ch2-Train2_ directory with all extracted content from Ch2-Train.tar.gz
+
 _./data/SFMV_ extracted content of udacity-datasetElCaminoBack directory from UdacitySDC_ElCamino.tar.gz
+
 _./data/MVSF_ extracted content of udacity-datasetElCamino directory from UdacitySDC_ElCamino.tar.gz
+
 _./data/el_camino_north_ extracted el_camino_north.bag from CH3_001.tar.gz
+
 _./data/el_camino_south_ extracted el_camino_south.bag from CH3_001.tar.gz
+
 _./python_ contains all python scripts
+
 _./input_ contains preoared for training datasets
+
 _./input/Test/centre_ contains test images
+
 _./pointers_ pointers files
+
 _./caffe_ contains files related to Caffe
 
 All actual data is skipped in the repository in order to reduce its volume.
