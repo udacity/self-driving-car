@@ -29,7 +29,7 @@ def main():
 	parser.add_argument('-sf', '--source_folder', type=str, nargs='?', default='./', help='Source folder with images in ./center/ folder')
 	parser.add_argument('-df', '--destination_folder', type=str, nargs='?', default='./', help='Destination folder where we save files')
 	parser.add_argument('-l', '--label', type=str, nargs='?', default='nnn', help='String to add to mark this dataset')
-	parser.add_argument('-n', '--n_pointers', type=int, nargs='?', default=1000, help='String to add to mark this dataset')
+	parser.add_argument('-n', '--n_pointers', type=int, nargs='?', default=1000, help='Number of pointers on the road')
 	parser.add_argument('-m', '--max_points', type=int, nargs='?', default=100, help='Maximal number of points per pointer')
 	arg = parser.parse_args()
 	FILE_TO_OPEN=arg.infile

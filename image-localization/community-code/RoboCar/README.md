@@ -34,18 +34,23 @@ Due to the fact that the first image of a pointer is very similar to the last im
 
 Start by setting the working directory to the root directory of the project
 
-Create pointers:
+####Create pointers:
+
 For path from MV to SF:
+
 ```
 python ./python/class_creator.py -i ./data/MVSF/interpolated.csv -o ./pointers/pointers_MVSF.csv -od ./pointers/pointers_data_MVSF.pkl > ./pointers/pointers_create_MVSF.log
 ```
 For path from SF to MV:
+
 ```
 python ./python/class_creator.py -i ./data/SFMV/interpolated.csv -o ./pointers/pointers_SFMV.csv -od ./pointers/pointers_data_SFMV.pkl > ./pointers/pointers_create_SFMV.log
 ```
 
-Prepare images sets
+####Prepare images sets
+
 MV->SF
+
 ```
 python ./python/class_adder.py -o ./input/MVSF/pointers_MVSF.csv -id ./pointers/pointers_data_MVSF.pkl -i ./data/MVSF/interpolated.csv -sf ./data/MVSF/center/ -df ./input/MVSF/center/ -l MVSF -n 1534 -m 100
 python ./python/class_adder.py -o ./input/MVSF/pointers_elcm_n.csv -id ./pointers/pointers_data_MVSF.pkl -i ./data/el_camino_north/interpolated.csv -sf ./data/el_camino_north/center/ -df ./input/MVSF/center/ -l elcn -n 1534 -m 300
@@ -53,27 +58,32 @@ python ./python/class_adder.py -o ./input/MVSF/pointers_Ch2.csv -id ./pointers/p
 ```
 
 SF->MV
+
 ```
 python ./python/class_adder.py -o ./input/SFMV/pointers_SFMV.csv -id ./pointers/pointers_data_SFMV.pkl -i ./data/SFMV/interpolated.csv -sf ./data/SFMV/center/ -df ./input/SFMV/center/ -l SFMV -n 1798 -m 100
 python ./python/class_adder.py -o ./input/SFMV/pointers_elcm_s.csv -id ./pointers/pointers_data_SFMV.pkl -i ./data/el_camino_south/interpolated.csv -sf ./data/el_camino_south/center/ -df ./input/SFMV/center/ -l elcs -n 1798 -m 300 
 python ./python/class_adder.py -o ./input/SFMV/pointers_Ch2.csv -id ./pointers/pointers_data_SFMV.pkl -i ./data/Ch2-Train2/interpolated.csv -sf ./data/Ch2-Train2/center/ -df ./input/SFMV/center/ -l Ch2 -n 1798 -m 300
 ```
+Note that there is no clear markers of direction in the Ch2-Train dataset, so, a part of code in the _./python/class_adder.py_ should be uncommented with the correct sign ">" of "<" (see comments in the corresponding file). The code uses special timepoint of the reversal turn which can easily be obtained by analysis of coordinates of images in the training set.
 
-Create lmdbs
+####Create lmdbs
+
 ```
 python ./python/create_lmdb.py -i ./input/MVSF/center/ -o ./input/MVSF/
 python ./python/create_lmdb.py -i ./input/SFMV/center/ -o ./input/SFMV/
 python ./python/create_lmdb_way.py
 ```
 
-Compute mean images
+####Compute mean images
+
 ```
 /path/to/caffe/build/tools/compute_image_mean -backend=lmdb ./input/MVSF/train_lmdb/ ./input/MVSF/mean.binaryproto
 /path/to/caffe/build/tools/compute_image_mean -backend=lmdb ./input/SFMV/train_lmdb/ ./input/SFMV/mean.binaryproto
 /path/to/caffe/build/tools/compute_image_mean -backend=lmdb ./input/way/train_lmdb ./input/way/mean.binaryproto
 ```
 
-Start training of the neural networks:
+####Start training of the neural networks:
+
 ```
 /path/to/caffe/build/tools/caffe train -solver ./caffe/MVSF/solver.prototxt > ./caffe/MVSF/model_train.log
 /path/to/caffe/build/tools/caffe train -solver ./caffe/SFMV/solver.prototxt > ./caffe/SFMV/model_train.log
@@ -84,7 +94,10 @@ It may take hours/days, depends on your hardware. But I supplied you with alread
 
 Because the algorithm use random sampling for training/validation datasets creating and random neural networks initialisation, results of training may be slightly different. 
 
-Let magic happen! Use the trained neural networks to predict on the Test dataset.
+####Let magic happen!
+
+Use the trained neural networks to predict on the Test dataset.
+
 ```
 python ./python/make_predictions.py
 ```
@@ -92,9 +105,9 @@ python ./python/make_predictions.py
 
 ##Data structure
 _./data_ folder with unbagged raw data. Initial .bag data files were processed with bagdump.py
-_./data/Ch2-Train2_ folder with all extracted content from Ch2-Train.tar.gz
-_./data/SFMV_ extracted content of udacity-datasetElCamino folder from UdacitySDC_ElCamino.tar.gz
-_./data/MVSF_ extracted content of udacity-datasetElCaminoBack folder from UdacitySDC_ElCamino.tar.gz
+_./data/Ch2-Train2_ directory with all extracted content from Ch2-Train.tar.gz
+_./data/SFMV_ extracted content of udacity-datasetElCaminoBack directory from UdacitySDC_ElCamino.tar.gz
+_./data/MVSF_ extracted content of udacity-datasetElCamino directory from UdacitySDC_ElCamino.tar.gz
 _./data/el_camino_north_ extracted el_camino_north.bag from CH3_001.tar.gz
 _./data/el_camino_south_ extracted el_camino_south.bag from CH3_001.tar.gz
 _./python_ contains all python scripts
@@ -125,8 +138,8 @@ Data processing and training of NNs were performed on a machine with the followi
 
 Average training rate for the setup was 4.23 iter/sec
 
-Average prediction rate 45,7 fps.
+Average prediction rate 45.7 fps.
 
-##Acknowledgements
+##Acknowledgments
 Thank you to [rwightman](https://github.com/rwightman/udacity-driving-reader) for an excellent ros bag processing script.
 Thank you to my parents and friends who have supported me throughout the Challenge!
