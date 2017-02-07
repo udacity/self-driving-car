@@ -49,14 +49,16 @@ class Ratekeeper(object):
 
 def car_plant(pos, speed, grade, gas, brake):
     # vehicle parameters
+    g = 9.81
     mass = 1700
     aero_cd = 0.3
-    force_peak = mass * 3.
-    force_brake_peak = -mass * 10.  # 1g
+    # force_peak is set to get maximum acceleration allowed of 0.4g
+    force_peak = mass * 1.24
+    # force_brake_peak is set to get maximum decceleration allowed -0.9g
+    force_brake_peak = -mass * 43
     power_peak = 100000   # 100kW
     speed_base = power_peak / force_peak
     rolling_res = 0.01
-    g = 9.81
     air_density = 1.225
     gas_to_peak_linear_slope = 3.33
     brake_to_peak_linear_slope = 0.2
@@ -98,7 +100,6 @@ class Plant(object):
 
         self.angle_steer = 0.
         self.gear_choice = 0
-        self.speed, self.speed_prev = 0., 0.
 
         self.esp_disabled = 0
         self.main_on = 1
@@ -107,6 +108,7 @@ class Plant(object):
         self.brake_pressed = 0
         self.distance, self.distance_prev = 0., 0.
         self.speed, self.speed_prev = speed, speed
+        self.acceleration_prev = None
         self.steer_error, self.brake_error, self.steer_not_allowed = 0, 0, 0
         self.gear_shifter = 4   # D gear
         self.pedal_gas = 0
@@ -119,21 +121,15 @@ class Plant(object):
         self.lead_relevancy = lead_relevancy
 
         # lead car
-        self.distance_lead, self.distance_lead_prev = distance_lead, distance_lead
+        self.distance_lead_prev = distance_lead
 
         self.rk = Ratekeeper(rate, print_delay_threshold=100)
         self.ts = 1. / rate
 
-    def speed_sensor(self, speed):
-        if speed < 0.3:
-            return 0
-        else:
-            return speed
-
     def current_time(self):
         return float(self.rk.frame) / self.rate
 
-    def step(self, brake=0, gas=0, steer_torque=0, v_lead=0.0, cruise_buttons=None, grade=0.0):
+    def step(self, brake=0, gas=0, steer_torque=0, v_lead=0.0, grade=0.0):
         # dbc_f, sgs, ivs, msgs, cks_msgs, frqs = initialize_can_struct(self.civic, self.brake_only)
 
         distance_lead = self.distance_lead_prev + v_lead * self.ts
@@ -152,49 +148,53 @@ class Plant(object):
 
         # *** radar model ***
         if self.lead_relevancy:
-            d_rel = np.maximum(0., self.distance_lead - distance)
+            d_rel = np.maximum(0., distance_lead - distance)
             v_rel = v_lead - speed
         else:
             d_rel = 200.
             v_rel = 0.
 
+        # set sensible value to acceleration for first iteration
+        if self.acceleration_prev is None:
+            self.acceleration_prev = acceleration
         # print at 5hz
-        if (self.rk.frame % (self.rate / 5)) == 0:
-            msg_tmpl = ("%6.2f m  %6.2f m/s  %6.2f m/s2   %.2f ang "
+        # if (self.rk.frame % (self.rate / 5)) == 0:
+        if True:
+            msg_tmpl = ("%6.2f m  %6.2f m/s  %6.2f m/s2   %.2f m/s3 "
                         "  gas: %.2f  brake: %.2f  steer: %5.2f "
                         "  lead_rel: %6.2f m  %6.2f m/s")
-            msg = msg_tmpl % (distance, speed, acceleration, self.angle_steer,
+            msg = msg_tmpl % (distance, speed, acceleration, acceleration - self.acceleration_prev,
                               gas, brake, steer_torque, d_rel, v_rel)
 
             if self.verbosity > 2:
                 print(msg)
 
         # ******** publish the car ********
-        vls = [self.speed_sensor(speed), self.speed_sensor(speed),
-               self.speed_sensor(speed), self.speed_sensor(speed),
-               self.angle_steer, 0, self.gear_choice, speed != 0,
-               0, 0, 0, 0,
-               self.v_cruise, not self.seatbelt, self.seatbelt, self.brake_pressed,
-               self.user_gas, cruise_buttons, self.esp_disabled, 0,
-               self.user_brake, self.steer_error, self.speed_sensor(
-                   speed), self.brake_error,
-               self.brake_error, self.gear_shifter, self.main_on, self.acc_status,
-               self.pedal_gas, self.cruise_setting,
-               # left_blinker, right_blinker, counter
-               0, 0, 0,
-               # interceptor_gas
-               0, 0]
+        # vls = [self.speed_sensor(speed), self.speed_sensor(speed),
+        #        self.speed_sensor(speed), self.speed_sensor(speed),
+        #        self.angle_steer, 0, self.gear_choice, speed != 0,
+        #        0, 0, 0, 0,
+        #        self.v_cruise, not self.seatbelt, self.seatbelt, self.brake_pressed,
+        #        self.user_gas, cruise_buttons, self.esp_disabled, 0,
+        #        self.user_brake, self.steer_error, self.speed_sensor(
+        #            speed), self.brake_error,
+        #        self.brake_error, self.gear_shifter, self.main_on, self.acc_status,
+        #        self.pedal_gas, self.cruise_setting,
+        #        # left_blinker, right_blinker, counter
+        #        0, 0, 0,
+        #        # interceptor_gas
+        #        0, 0]
 
-        # TODO: Use vls for something
-        assert vls is not None
+        # # TODO: Use vls for something
+        # assert vls is not None
 
         # ******** update prevs ********
         self.speed_prev = speed
         self.distance_prev = distance
         self.distance_lead_prev = distance_lead
+        self.acceleration_prev = acceleration
 
-        car_in_front = distance_lead - \
-            distance if self.lead_relevancy else 200.
+        car_in_front = distance_lead - distance if self.lead_relevancy else 200.
 
         self.rk.keep_time()
         return (speed, acceleration, car_in_front, steer_torque)
