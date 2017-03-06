@@ -27,6 +27,7 @@ class SteeringNode(object):
                          buffer=np.array(d))[:,:,::-1]
         if self.image_lock.acquire(True):
             self.img = arr
+            tf.reset_default_graph()
             if self.model is None:
                 self.model = self.get_model()
             self.steering = self.predict(self.model, self.img)
