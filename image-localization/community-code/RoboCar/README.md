@@ -18,17 +18,17 @@ To do it unused CAMERA_TOPICS from bagutils.py were removed.
 The problem was divided into two parts:
 * Determination of the direction of ride (SF->MV or MV->SF)
 * Localization on the El Camino road
-The heart of the approach is a set of three [Googlenets](https://github.com/BVLC/caffe/blob/master/models/bvlc_googlenet/train_val.prototxt). One is used to determine the direction (we assume that all images in the dataset were obtained in the same direction, there were no U-turns), two others dedicated to localization (classification) of images within SF->MV or MV->SF path. So, the return trip was treated as complitly different road. Each of the two "roads" were divided into small "pointers" - areas, created by 50 pictures in a row (with consequent merging of too close pointers occured because of slow ride, for ditails see ./python/class_creator.py). The two CNNs were used to classify images by assigning pointers to them.
-Resulted predictions were interpolated inside predicted pointers. As the algorithm does not have any speed estimation, speed from training dataset was used to calculate average coordinates shift between frames in each pointer.
+The heart of the approach is a set of three [Googlenets](https://github.com/BVLC/caffe/blob/master/models/bvlc_googlenet/train_val.prototxt). One is used to determine the direction (we assume that all images in the dataset were obtained in the same direction, there were no U-turns), two others dedicated to localization (classification) of images within SF->MV or MV->SF path. The return trip was treated as a completely different road. Each of the two "roads" were divided into small "pointers" - areas, created by 50 pictures in a row (with consequent merging of too close pointers occured because of slow ride, for details see ./python/class_creator.py). The two CNNs were used to classify images by assigning pointers to them.
+Resulting predictions were interpolated inside predicted pointers. As the algorithm does not have any speed estimation, speed from training dataset was used to calculate average coordinates shift between frames in each pointer.
 
 ###Data preparation
-Images were preprocessed by openCV:
+Images that were preprocessed by openCV:
 * Histogram equalization
-* Applying ROI mask. It was found out that by masking region of images which is usually occupied only by the road can increase accuracy of predictions
-* Image cropping to delet unused image area
-* Image scaling to 224x224 px to feed in into the neural network
+* Applying ROI mask. It was found out that masking the region of images which is usually occupied only by the road can increase the accuracy of predictions
+* Image cropping to delete unused image area
+* Image scaling to 224x224 px to feed into the neural network
 To make pointers more balanced, maximal number of frames per pointer from a dataset was limited.
-Due to the fact that the first image of a pointer is very similar to the last image of the previous pointer, only pictures with coordinates deviation less than 50% of the pointer size were used. It helps the artificial neural network to predict pointers more confident.
+Due to the fact that the first image of a pointer is very similar to the last image of the previous pointer, only pictures with coordinates deviation less than 50% of the pointer size were used. It helps the neural network to predict pointers more confidently.
 
 ##Run the code
 
@@ -64,7 +64,7 @@ python ./python/class_adder.py -o ./input/SFMV/pointers_SFMV.csv -id ./pointers/
 python ./python/class_adder.py -o ./input/SFMV/pointers_elcm_s.csv -id ./pointers/pointers_data_SFMV.pkl -i ./data/el_camino_south/interpolated.csv -sf ./data/el_camino_south/center/ -df ./input/SFMV/center/ -l elcs -n 1798 -m 300 
 python ./python/class_adder.py -o ./input/SFMV/pointers_Ch2.csv -id ./pointers/pointers_data_SFMV.pkl -i ./data/Ch2-Train2/interpolated.csv -sf ./data/Ch2-Train2/center/ -df ./input/SFMV/center/ -l Ch2 -n 1798 -m 300
 ```
-Note that there is no clear markers of direction in the Ch2-Train dataset, so, a part of code in the _./python/class_adder.py_ should be uncommented with the correct sign ">" of "<" (see comments in the corresponding file). The code uses special timepoint of the reversal turn which can easily be obtained by analysis of coordinates of images in the training set.
+Note that there is no clear markers of direction in the Ch2-Train dataset, so, a part of the code in  _./python/class_adder.py_ should be uncommented with the correct sign ">" of "<" (see comments in the corresponding file). The code uses a special timepoint of the reversal turn which can easily be obtained by analyzing the coordinates of images in the training set.
 
 ####Create lmdbs
 
@@ -90,9 +90,9 @@ python ./python/create_lmdb_way.py
 /path/to/caffe/build/tools/caffe train -solver ./caffe/way/solver.prototxt > ./caffe/way/model_train.log
 ```
 
-It may take hours/days, depends on your hardware. But I supplied you with already trained networks, so, you do not have to wait for a long time.
+It may take hours or days depending on your hardware, but I supplied you with pre-trained networks, so you don't have to wait for a long time.
 
-Because the algorithm use random sampling for training/validation datasets creating and random neural networks initialisation, results of training may be slightly different. 
+Because the algorithm uses random sampling for training/validation datasets creating and random neural networks initialization, the results of training may be slightly different. 
 
 ####Let magic happen!
 
@@ -147,7 +147,7 @@ Data processing and training of NNs were performed on a machine with the followi
 * cuDNN 5.1
 * Nvidia driver v. 367.57
 
-Average training rate for the setup was 4.23 iter/sec
+Average training rate for the setup was 4.23 iter/sec.
 
 Average prediction rate 45.7 fps.
 
