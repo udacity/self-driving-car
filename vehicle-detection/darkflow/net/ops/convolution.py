@@ -85,8 +85,8 @@ class convolutional(BaseOp):
                 'updates_collections' : None,
                 'is_training': layer.h['is_training']
                 })
-            v = tf.__version__.split('.')[1]
-            if int(v) < 12: key = 'initializers'
+            v = tf.__version__
+            if int(v) < 0.12: key = 'initializers'
             else: key = 'param_initializers'
             args.update({key : layer.w})
             return slim.batch_norm(inp, **args)
