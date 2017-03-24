@@ -13,7 +13,7 @@ class route(BaseOp):
 				assert this is not None, \
 				'Routing to non-existence {}'.format(r)
 			routes_out += [this.out]	
-		self.out = tf.concat(3, routes_out)
+		self.out = tf.concat(axis=3, values=routes_out)
 
 	def speak(self):
 		msg = 'concat {}'
