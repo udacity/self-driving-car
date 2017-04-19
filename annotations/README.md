@@ -16,8 +16,8 @@ The dataset includes driving in Mountain View California and neighboring cities 
 #### CSV Format
 
 - xmin
-- xmax
 - ymin
+- xmax
 - ymax
 - frame
 - label
