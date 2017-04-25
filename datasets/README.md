@@ -3,7 +3,7 @@ In an attempt to cleanup the data release practices of the Udacity Self-Driving 
 
 Check out [udacity-driving-reader](https://github.com/rwightman/udacity-driving-reader) for some easy-to-use scripts to read or export to CSV or TensorFlow.
 
-##Current Releases
+## Current Releases
 These releases should be issue/error free and comply with the new naming schema.
 
 #### Challenge 2 Driving Data
@@ -23,11 +23,11 @@ These releases should be issue/error free and comply with the new naming schema.
 |:----:|:-------:|
 | [CHX_001](https://github.com/udacity/self-driving-car/tree/master/datasets/CHX) | Lap around block at Udacity office with new HDL-32E LIDAR |
 
-##Legacy Data
+## Legacy Data
 
 [All torrent releases from Udacity can be found on our AcademicTorrents page with associated descriptions.](http://academictorrents.com/userdetails.php?id=5125) These releases are old and likely have issues that make them unsuitable for training, but many are useful. We will update legacy releases with more info as we move forward, but please use them only as a reference for now if you don't check them beforehand.
 
-####Driving Data
+#### Driving Data
 | Date | Lighting Conditions | Duration | Compressed Size | Uncompressed | Direct Download | Torrent | MD5 |
 | ---- | :------------------:| --------:| ---------------:| ------------:|:---------------:|:-------:|:---:|
 | 09/29/2016 | Sunny | 00:12:40 | 25G | 40G | [HTTP](http://bit.ly/udacity-dataset-2-1) | [Torrent](datasets/dataset.bag.tar.gz.torrent)| `33a10f7835068eeb29b2a3274c216e7d` |
@@ -35,5 +35,5 @@ These releases should be issue/error free and comply with the new naming schema.
 | 10/10/2016 | Sunny | 03:20:02 | 21G | 23.3G |  | [Torrent](http://bit.ly/2dZTOcq) | `156fb6975060f60c452a9fa7c4121195` |
 | 10/20/2016 | Sunny | 03:30:00 | 30G | 40G |  | [Torrent](http://bit.ly/2epl7Ir ) | `13f107727bed0ee5731647b4e114a545` |
 
-####Isolated and Trimmed Driving Data
+#### Isolated and Trimmed Driving Data
 With the help of [Auro Robotics](http://www.auro.ai/), compression, and selective recording, we now have considerably smaller datasets.
