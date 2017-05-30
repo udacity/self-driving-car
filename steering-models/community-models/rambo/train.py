@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten, Lambda, ELU, Activation
+from keras.layers import Dense, Dropout,merge, Merge, Flatten, Lambda, ELU, Activation
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.layers.convolutional import Convolution2D
 from keras.layers.normalization import BatchNormalization
@@ -338,6 +338,73 @@ def create_comma_model_large_dropout():
     print('Model is created and compiled..')
     return model
 
+def create_rambo_model():    
+    #First branch
+    branch1 = Sequential()
+    branch1.add(Convolution2D(16, 8, 8, subsample=(4, 4), border_mode="same", input_shape=(row, col, ch)))
+    branch1.add(Activation('relu'))
+    branch1.add(Convolution2D(32, 5, 5, subsample=(2, 2), border_mode="same"))
+    branch1.add(Activation('relu'))
+    branch1.add(Convolution2D(64, 5, 5, subsample=(2, 2), border_mode="same"))
+    branch1.add(Flatten())
+    branch1.add(Activation('relu'))
+    branch1.add(Dense(512))
+    branch1.add(Activation('relu'))
+    branch1.add(Dense(1, input_dim=512))
+    
+    #Second branch
+    branch2 = Sequential()
+    branch2.add(Convolution2D(24, 5, 5, subsample=(2, 2), border_mode="same", input_shape=(row, col, ch)))
+    branch2.add(Activation('relu'))
+    branch2.add(Convolution2D(36, 5, 5, subsample=(2, 2), border_mode="same"))
+    branch2.add(Activation('relu'))
+    branch2.add(Convolution2D(48, 5, 5, subsample=(2, 2), border_mode="same"))
+    branch2.add(Activation('relu'))
+    branch2.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="same"))
+    branch2.add(Activation('relu'))
+    branch2.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="same"))
+    branch2.add(Flatten())
+    branch2.add(Activation('relu'))
+    branch2.add(Dense(100))
+    branch2.add(Activation('relu'))
+    branch2.add(Dense(50))
+    branch2.add(Activation('relu'))
+    branch2.add(Dense(10))
+    branch2.add(Activation('relu'))
+    branch2.add(Dense(1, input_dim=10))
+    
+    #Third branch
+    branch3 = Sequential()
+    branch3.add(Convolution2D(24, 5, 5, subsample=(2, 2), border_mode="same", input_shape=(row, col, ch)))
+    branch3.add(Activation('relu'))
+    branch3.add(Convolution2D(36, 5, 5, subsample=(2, 2), border_mode="same"))
+    branch3.add(Activation('relu'))
+    branch3.add(Convolution2D(48, 5, 5, subsample=(2, 2), border_mode="same"))
+    branch3.add(Activation('relu'))
+    branch3.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="same"))
+    branch3.add(Activation('relu'))
+    branch3.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="same"))
+    branch3.add(Activation('relu'))
+    branch3.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="same"))
+    branch3.add(Flatten())
+    branch3.add(Activation('relu'))
+    branch3.add(Dense(100))
+    branch3.add(Activation('relu'))
+    branch3.add(Dense(50))
+    branch3.add(Activation('relu'))
+    branch3.add(Dense(10))
+    branch3.add(Activation('relu'))
+    branch3.add(Dense(1, input_dim=10))
+    
+    #Final merge
+    model = Sequential()
+    model.add(Merge([branch1, branch2, branch3], mode='concat'))
+    model.add(Activation('relu'))
+    model.add(Dense(1))
+    model.compile(optimizer="adam", loss="mse")
+    
+    print('Model is created and compiled..')
+    return model
 
 def my_train_generator():
     num_iters = X_train.shape[0] / batch_size
