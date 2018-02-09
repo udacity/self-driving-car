@@ -83,7 +83,7 @@ python preprocess_train_data.py
 To pre-process phase 2 test data, run:
 
 ```
-python preprocess_train_data.py
+python preprocess_test_data.py
 ```
 
 These pre-processing scripts convert image sets to numpy arrays.
