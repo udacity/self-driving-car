@@ -23,6 +23,8 @@ The dataset includes driving in Mountain View California and neighboring cities 
 - label
 - preview url for frame
 
+_CAUTION: The columns in the csv file report a diffent order, which is incorrect_
+
 <table>
 <tr>
     <td>Size</td>
