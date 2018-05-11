@@ -19,12 +19,6 @@ Here's a list of the projects we've open sourced:
 * [**ROS Steering Node**](https://github.com/udacity/self-driving-car/tree/master/steering-models/steering-node) – Useful to enable the deep learning models to interact with ROS
 
 ## How to Contribute
-First, some important places to join:
-
-* Join the [announcements-only mailing list](https://groups.google.com/a/udacity.com/forum/#!forum/self-driving-car-announcements)
-* Join the [Slack team](http://nd013.udacity.com)
-* Fill out the [individual contributor agreement](https://goo.gl/forms/iIdeCge8UHpkG96C3) to be whitelisted
-
 Like any open source project, this code base will require a certain amount of thoughtfulness. However, when you add a 2-ton vehicle into the equation, we also need to make safety our absolute top priority, and pull requests just don’t cut it. To really optimize for safety, we’re breaking down the problem of making the car autonomous into **[Udacity Challenges](http://udacity.com/self-driving-car)**.
 
 #### Challenges

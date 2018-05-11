@@ -34,6 +34,7 @@ The dataset includes driving in Mountain View California and neighboring cities 
 </tr>
 </table>
 
+_**Caution:** The order of the header columns in the labels .csv file in the below **Download** link is out of order. Please use the corrected .csv file included [here](https://github.com/udacity/self-driving-car/blob/master/annotations/labels_crowdai.csv) in the repository._
 ### [Download](http://bit.ly/udacity-annoations-crowdai)
 
 
