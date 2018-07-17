@@ -3,7 +3,7 @@
 ## We’re Building an Open Source Self-Driving Car
 #### And we want your help!
 
-At [Udacity](https://udacity.com), we believe in democratizing education. How can we provide opportunity to everyone on the planet? We also believe in teaching really amazing and useful subject matter. When we decided to build the [Self-Driving Car Nanodegree program](https://udacity.com/nd013), to teach the world to build autonomous vehicles, we instantly knew we had to tackle our own self-driving car too.
+At [Udacity](https://udacity.com), we believe in democratizing education. How can we provide opportunity to everyone on the planet? We also believe in teaching really amazing and useful subject matter. When we decided to build the [Self-Driving Car Nanodegree program](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013), to teach the world to build autonomous vehicles, we instantly knew we had to tackle our own self-driving car too.
 
 Together with [Google](https://google.com) Self-Driving Car founder and [Udacity](https://udacity.com) President Sebastian Thrun, we formed our core Self-Driving Car Team. One of the first decisions we made? **Open source code, written by hundreds of students from across the globe!**
 
