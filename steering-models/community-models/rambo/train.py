@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Dense, Dropout,merge, Merge, Flatten, Lambda, ELU, Activation
+from keras.layers import Dense, Dropout, Merge, Flatten, Lambda, ELU, Activation
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.layers.convolutional import Convolution2D
 from keras.layers.normalization import BatchNormalization
