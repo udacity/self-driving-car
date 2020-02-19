@@ -1,5 +1,6 @@
 # Annotated Driving Dataset
 
+Note: These datasets are intended for educational purposes only. Neither the dataset nor the labels are complete or comprehensive. We encourage you to explore newer, more complete datasets.
 
 ## Dataset 1 
 
