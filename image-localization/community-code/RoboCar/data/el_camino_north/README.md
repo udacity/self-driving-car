@@ -1,1 +1,0 @@
-Extracted el_camino_north.bag from CH3_001.tar.gz
