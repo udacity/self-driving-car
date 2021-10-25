@@ -1,0 +1,46 @@
+# Workflow to ensure whenever a Github PR is submitted, 
+# a JIRA ticket gets created automatically. 
+name: Manual Workflow
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on pull request events but only for the master branch
+  pull_request_target:
+    types: [opened, reopened]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  test-transition-issue:
+    name: Convert Github Issue to Jira Issue
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        
+    - name: Create NEW JIRA ticket
+      id: create
+      uses: atlassian/gajira-create@master
+      with:
+        project: CONUPDATE
+        issuetype: Task
+        summary: |
+          Github PR [Assign the ND component] | Repo: ${{ github.repository }}  | PR# ${{github.event.number}}
+        description: |
+           Repo link: https://github.com/${{ github.repository }}   
+           PR no. ${{ github.event.pull_request.number }} 
+           PR title: ${{ github.event.pull_request.title }}  
+           PR description: ${{ github.event.pull_request.description }}  
+           In addition, please resolve other issues, if any. 
+        fields: '{"components": [{"name":"nd013 - Self Driving Car Engineer ND"}], "customfield_16449":"https://classroom.udacity.com/", "customfield_16450":"Resolve the PR", "labels": ["github"], "priority":{"id": "4"}}'
+
+    - name: Log created issue
+      run: echo "Issue ${{ steps.create.outputs.issue }} was created"
