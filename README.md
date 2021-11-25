@@ -1,3 +1,6 @@
+> This repository is deprecated. Currently enrolled learners, if any, can utilize the https://knowledge.udacity.com/ forum for help on specific issues.
+>
+
 <img src="images/cover.png" alt="Self-Driving Car" width="800px">
 
 ## We’re Building an Open Source Self-Driving Car
